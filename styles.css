@@ -2,15 +2,15 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #666; /* Lighter gray */
+    color: #3c763d; /* Darker green */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e8f5e9; /* Very light green */
 }
 
 /* Header styles */
 header {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+    background: linear-gradient(135deg, #2e7d32, #66bb6a); /* Dark green to light green */
     color: white;
     padding: 30px 0;
     text-align: center;
@@ -32,7 +32,7 @@ header p {
 
 /* Navigation styles */
 nav {
-    background: #34495e;
+    background: #388e3c; /* Medium green */
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -51,14 +51,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #1E90FF; /* Regular blue color */
+    color: #c8e6c9; /* Light green */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
-    color: #1E90FF; /* Lighter blue on hover */
+    color: #a5d6a7; /* Slightly darker green on hover */
     text-decoration: underline;
     transform: scale(1.1);
 }
@@ -84,15 +84,15 @@ section {
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    border-bottom: 3px solid #2c3e50;
+    border-bottom: 3px solid #2e7d32; /* Dark green */
     padding-bottom: 10px;
     font-weight: 600;
-    color: #2c3e50;
+    color: #2e7d32; /* Dark green */
     transition: color 0.3s;
 }
 
 section h2:hover {
-    color: #34495e;
+    color: #1b5e20; /* Even darker green */
 }
 
 /* List styles */
@@ -111,12 +111,12 @@ ul li::before {
     content: '✔️';
     position: absolute;
     left: 0;
-    color: #2c3e50;
+    color: #2e7d32; /* Dark green */
 }
 
 /* Footer styles */
 footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+    background: linear-gradient(135deg, #2e7d32, #66bb6a); /* Dark green to light green */
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -130,12 +130,12 @@ footer p {
 
 /* Link styles */
 a {
-    color: #0000FF; /* Regular blue color */
+    color: #388e3c; /* Medium green */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #1E90FF; /* Lighter blue on hover */
+    color: #2e7d32; /* Dark green */
     text-decoration: underline;
 }
