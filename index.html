@@ -4,12 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aliaksandr Hubin - Academic Profile</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Font for Pixelated Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Body and Background */
+        body {
+            font-family: 'Press Start 2P', cursive; /* Pixel font like old games */
+            background-color: #F5F5DC; /* Soft beige background */
+            color: #333333; /* Darker text for better readability */
+            margin: 0;
+            padding: 0;
+            overflow: auto; /* Enable scrolling if content exceeds viewport */
+            font-size: 14px; /* Smaller font size */
+        }
+
+        /* Header */
+        header {
+            background: #8FBC8F; /* Muted green header color */
+            color: #FFFFFF; /* White text */
+            padding: 10px 0;
+            text-align: center; /* Center alignment for header */
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px; /* Make it square */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        /* Navigation Menu */
+        nav {
+            background: #D2B48C; /* Tan background */
+            color: #333333; /* Dark text */
+            padding: 10px 0;
+            text-align: center; /* Center alignment for navigation */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #333333; /* Dark text */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700; /* Gold color on hover */
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px 0;
+        }
+
+        section {
+            margin: 20px 0;
+            text-align: left; /* Left alignment for main content */
+        }
+
+        h2 {
+            color: #8B4513; /* Saddle brown for headings */
+            font-size: 18px; /* Smaller font size for headings */
+        }
+
+        h3 {
+            font-size: 16px; /* Smaller font size for subheadings */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333; /* Dark background for footer */
+            color: #FFFFFF; /* White */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Menu Wrapper */
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Menu Items */
+        .menu-item {
+            background-color: #F0E68C; /* Khaki */
+            color: #333333; /* Dark text */
+            padding: 10px 20px; /* Smaller padding */
+            margin: 10px;
+            font-size: 16px; /* Smaller font size for menu items */
+            text-transform: uppercase;
+            border: 2px solid #333333; /* Dark border */
+            box-shadow: 0 0 10px #333333; /* Dark shadow */
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .menu-item:hover {
+            background-color: #FFD700; /* Gold on hover */
+            color: #000000; /* Black text on hover */
+            transform: scale(1.1); /* Slight zoom on hover */
+            box-shadow: 0 0 15px #8B4513; /* Saddle brown shadow */
+        }
+
+        /* Game Section */
+        #game {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+
+        canvas {
+            border: 1px solid #333;
+            background-color: #F0E68C; /* Khaki for the game area */
+        }
+
+        /* Blinking Title for a retro effect */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .blinking {
+            animation: blink 1s infinite;
+        }
+
+        /* Retro Scanline Effect */
+        body:after {
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1) 1px,
+                rgba(255, 255, 255, 0) 2px
+            );
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <div class="container">
-            <h1>Aliaksandr Hubin</h1>
+            <h1 class="blinking">Aliaksandr Hubin</h1>
             <p>Associate Professor, NMBU, Østfold University College, University of Oslo</p>
             <img src="hubin_pside.jpg" alt="Your Photo" class="profile-photo">
         </div>
@@ -18,20 +180,19 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#bio">Bio</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#software">Software</a></li>
-                <li><a href="#reviewing">Reviewing</a></li>
-                <li><a href="#training">Training</a></li>
-                <li><a href="#teaching">Teaching</a></li>
-                <li><a href="#mentoring">Mentoring</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#bio" class="menu-item">Bio</a></li>
+                <li><a href="#news" class="menu-item">News</a></li>
+                <li><a href="#publications" class="menu-item">Publications</a></li>
+                <li><a href="#software" class="menu-item">Software</a></li>
+                <li><a href="#reviewing" class="menu-item">Reviewing</a></li>
+                <li><a href="#training" class="menu-item">Training</a></li>
+                <li><a href="#teaching" class="menu-item">Teaching</a></li>
+                <li><a href="#mentoring" class="menu-item">Mentoring</a></li>
+                <li><a href="#contact" class="menu-item">Contact</a></li>
             </ul>
         </div>
     </nav>
-
-    <main>
+ <main>
         <section id="bio" class="bio">
             <div class="container">
                 <h2>About Me</h2>
@@ -39,7 +200,7 @@
                     I am an Associate Professor with a focus on Statistics, Artificial Intelligence, Machine Learning, and Operations Research. My academic training spans across three institutions, culminating in a PhD in Statistics from the University of Oslo, Norway. My research interests include Bayesian statistics, Bayesian model selection and averaging, efficient MCMC and Variational Bayes inference procedures, and probabilistic machine learning. I have published extensively in these areas and am actively involved in mentoring the next generation of scholars. I am also the chair of the board of the Oslo section of the norwegian statistical association. 
                 </p>
                 <p>
-                    Research Profiles:
+                    Research and Social Profiles:
                     <ul>
                         <li><a href="https://scholar.google.com/citations?user=Lx-G8ckAAAAJ&hl=en">Google Scholar</a></li>
                         <li><a href="https://wo.cristin.no/as/WebObjects/cristin.woa/wa/fres?action=sok&etternavn=Hubin&fornavn=Aliaksandr&erNorsk=1&erNordisk=1&erNasjonalt=1&erInternasjonalt=1&erUkjent=1&isParametre=1&sort=ar&bs=50">Cristin</a></li>
@@ -54,7 +215,8 @@
             <div class="container">
                 <h2>News</h2>
                 <ul>
-                <li>New paper in Neural Computing and Applications out <a href=""="https://link.springer.com/article/10.1007/s00521-024-10349-1/">Evolutionary variational inference for Bayesian generalized nonlinear models </a>.</li>
+                <li>My PhD student's first paper accpeted with minor revisions to TMLR: <a href="https://openreview.net/forum?id=d6kqUKzG3V">Sparsifying Bayesian neural networks with latent binary variables and normalizing flows</a>.</li>
+                <li>New paper in Neural Computing and Applications out <a href="https://link.springer.com/article/10.1007/s00521-024-10349-1/">Evolutionary variational inference for Bayesian generalized nonlinear models</a>.</li>
                 <li>Humbled to be mentioned among top reviewers in UAI <a href="https://www.auai.org/uai2024/top_reviewers">auai.org/uai2024/top_reviewers</a>.</li>
                 <li>Two ICML 2024 papers out <a href="https://proceedings.mlr.press/v235/papamarkou24b.html">Position: Bayesian Deep Learning is Needed in the Age of Large-Scale AI</a> and <a href="https://proceedings.mlr.press/v235/hajj24a.html">Incorporating probabilistic domain knowledge into deep multiple instance learning</a>.</li>
                 <li> Organized by us NSM24 was a success story. Thanks to eveyone involved! <a href="https://sites.google.com/view/nsm24/hjem">Det 21. norske statistikermøtet</a>.
@@ -124,7 +286,7 @@
             </li>
             <li>
                 <strong>Subsampling Strategies for Bayesian Variable Selection and Model Averaging in GLM and BGNLM.</strong><br>
-                Jon Lachmann. 2021, UIO<br>
+                Jon Lachmann. 2021, Stockholm University<br>
                 <a href="https://www.diva-portal.org/smash/get/diva2:1578383/FULLTEXT01.pdf">Read Thesis</a>
             </li>
             <li>
@@ -305,12 +467,85 @@
                 <p>Connect with me on <a href="https://www.linkedin.com/in/aliaksandr-hubin-9504917a/">LinkedIn</a></p>
             </div>
         </section>
+   
+        <!-- Game Section -->
+        <section id="game">
+            <h2>Tired of science? - Play the game.</h2>
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <p>Use the left and right arrow keys to move the basket and catch the objects!</p>
+        </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Aliaksandr Hubin</p>
-        </div>
+        <p>&copy; 2024 Aliaksandr Hubin</p>
     </footer>
+
+    <script>
+        // Game variables
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let basketX = canvas.width / 2 - 25;
+        const basketWidth = 50;
+        const basketHeight = 20;
+        let fallingObjectX = Math.random() * (canvas.width - 30);
+        let fallingObjectY = 0;
+        const fallingObjectSize = 30;
+        let score = 0;
+
+        document.addEventListener('keydown', moveBasket);
+
+        function moveBasket(event) {
+            if (event.key === 'ArrowLeft' && basketX > 0) {
+                basketX -= 15;
+            } else if (event.key === 'ArrowRight' && basketX < canvas.width - basketWidth) {
+                basketX += 15;
+            }
+        }
+
+        function drawBasket() {
+            ctx.fillStyle = '#333'; // Dark color for basket
+            ctx.fillRect(basketX, canvas.height - basketHeight, basketWidth, basketHeight);
+        }
+
+        function drawFallingObject() {
+            ctx.fillStyle = '#FF4500'; // Orange color for falling object
+            ctx.fillRect(fallingObjectX, fallingObjectY, fallingObjectSize, fallingObjectSize);
+        }
+
+        function updateGame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            fallingObjectY += 2; // Falling speed
+
+            // Check for collision
+            if (fallingObjectY + fallingObjectSize > canvas.height - basketHeight && 
+                fallingObjectX + fallingObjectSize > basketX && 
+                fallingObjectX < basketX + basketWidth) {
+                score++;
+                resetFallingObject();
+            }
+
+            if (fallingObjectY > canvas.height) {
+                resetFallingObject();
+            }
+
+            drawBasket();
+            drawFallingObject();
+            ctx.fillStyle = '#333';
+            ctx.font = '16px Arial';
+            ctx.fillText('Score: ' + score, 10, 20);
+
+            requestAnimationFrame(updateGame);
+        }
+
+        function resetFallingObject() {
+            fallingObjectX = Math.random() * (canvas.width - fallingObjectSize);
+            fallingObjectY = 0;
+        }
+
+        // Start the game
+        updateGame();
+    </script>
+
 </body>
 </html>
