@@ -491,7 +491,7 @@
         <p>&copy; 2024 Aliaksandr Hubin</p>
     </footer>
 
-   <script>
+<script>
     // Variables for the game state
     let canvas = document.getElementById('gameCanvas');
     let ctx = canvas.getContext('2d');
@@ -513,7 +513,7 @@
     let brickOffsetTop = 30;
     let brickOffsetLeft = 30;
     let score = 0;
-    let lives = 17;
+    let lives = 3;
 
     // Variables to handle Fibonacci sequence
     let fibPrev = 0; // First number in the Fibonacci sequence
@@ -610,14 +610,36 @@
                         fibCurrent = newScore;
                         score = newScore;
 
-                        if (score == brickRowCount * brickColumnCount) {
-                            alert("YOU WIN, CONGRATS!");
-                            document.location.reload();
+                        // Check if all bricks are eliminated
+                        if (checkWin()) {
+                            drawWinMessage(); // Show the win message
                         }
                     }
                 }
             }
         }
+    }
+
+    // Check if all bricks are destroyed
+    function checkWin() {
+        for (let c = 0; c < brickColumnCount; c++) {
+            for (let r = 0; r < brickRowCount; r++) {
+                if (bricks[c][r].status == 1) {
+                    return false; // There's still at least one brick
+                }
+            }
+        }
+        return true; // All bricks are destroyed
+    }
+
+    // Draw the "You Won" message
+    function drawWinMessage() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.font = "24px Arial";
+        ctx.fillStyle = "#0095DD";
+        ctx.textAlign = "center";
+        ctx.fillText("YOU WON! Final Score: " + score, canvas.width / 2, canvas.height / 2);
+        cancelAnimationFrame(gameLoop); // Stop the game loop
     }
 
     function draw() {
@@ -660,11 +682,13 @@
 
         x += dx;
         y += dy;
-        requestAnimationFrame(draw);
+        gameLoop = requestAnimationFrame(draw); // Reference for stopping the game
     }
 
     draw();
 </script>
+
+
 
 </body>
 </html>
