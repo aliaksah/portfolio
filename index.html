@@ -11,35 +11,38 @@
     <style>
         /* Body and Background */
         body {
-            font-family: 'Press Start 2P', cursive; /* Pixel font like old games */
-            background-color: #F5F5DC; /* Soft beige background */
-            color: #333333; /* Darker text for better readability */
+            font-family: 'Press Start 2P', cursive; /* Pixel font */
+            background-color: #2a2a2e; /* Darker, soft gray background */
+            color: #66fcf1; /* Softer neon cyan */
             margin: 0;
             padding: 0;
-            overflow: auto; /* Enable scrolling if content exceeds viewport */
-            font-size: 14px; /* Smaller font size */
+            overflow: auto; /* Enable scrolling */
+            font-size: 14px;
         }
 
         /* Header */
         header {
-            background: #8FBC8F; /* Muted green header color */
-            color: #FFFFFF; /* White text */
+            background: #2d2d2f; /* Softer dark background */
+            color: #f39c12; /* Warm orange text */
             padding: 10px 0;
-            text-align: center; /* Center alignment for header */
+            text-align: center; /* Center alignment */
+            box-shadow: 0 0 10px #f39c12; /* Subtle warm glow */
         }
 
         .profile-photo {
             width: 150px;
             height: 150px; /* Make it square */
-            object-fit: cover; /* Maintain aspect ratio */
+            object-fit: cover;
+            border-radius: 10px; /* Slightly rounded */
+            box-shadow: 0 0 10px #45a29e; /* Soft cyan glow */
         }
 
         /* Navigation Menu */
         nav {
-            background: #D2B48C; /* Tan background */
-            color: #333333; /* Dark text */
+            background: #3a3a3c; /* Softer dark background */
+            color: #66fcf1; /* Softer neon cyan text */
             padding: 10px 0;
-            text-align: center; /* Center alignment for navigation */
+            text-align: center;
         }
 
         nav ul {
@@ -52,14 +55,19 @@
             margin-right: 20px;
         }
 
-        nav ul li a {
-            color: #333333; /* Dark text */
+        /* Make all hyperlinks neon green */
+        nav ul li a, 
+        a {
+            color: #39ff14; /* Neon green for hyperlinks */
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: #FFD700; /* Gold color on hover */
+        /* Hyperlinks remain neon green when visited or hovered */
+        nav ul li a:hover, 
+        a:hover, 
+        a:visited {
+            color: #39ff14; /* Neon green on hover and visited */
             text-decoration: underline;
         }
 
@@ -70,36 +78,39 @@
 
         section {
             margin: 20px 0;
-            text-align: left; /* Left alignment for main content */
+            text-align: left; /* Left alignment for content */
         }
 
         h2 {
-            color: #8B4513; /* Saddle brown for headings */
-            font-size: 18px; /* Smaller font size for headings */
+            color: #f39c12; /* Warm orange for headings */
+            font-size: 18px;
+            text-shadow: 0 0 5px #f39c12; /* Soft orange glow */
         }
 
         h3 {
-            font-size: 16px; /* Smaller font size for subheadings */
+            font-size: 16px;
         }
         
         /* List Items */
         ul {
-            line-height: 1.8; /* Increases the spacing between lines inside lists */
-            margin-bottom: 15px; /* Adds extra space between different lists */
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
         
         li {
-            margin-bottom: 10px; /* Adds extra space between list items */
+            margin-bottom: 10px;
+            color: #f1f1f1; /* Softer white for list items */
         }
 
         footer {
             text-align: center;
             padding: 10px 0;
-            background: #333; /* Dark background for footer */
-            color: #FFFFFF; /* White */
+            background: #2d2d2f;
+            color: #f39c12; /* Warm orange footer text */
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 0 10px #45a29e; /* Subtle cyan glow */
         }
 
         /* Menu Wrapper */
@@ -112,24 +123,24 @@
 
         /* Menu Items */
         .menu-item {
-            background-color: #F0E68C; /* Khaki */
-            color: #333333; /* Dark text */
-            padding: 10px 20px; /* Smaller padding */
+            background-color: #3a3a3c; /* Darker background */
+            color: #66fcf1; /* Softer neon cyan text */
+            padding: 10px 20px;
             margin: 10px;
-            font-size: 16px; /* Smaller font size for menu items */
+            font-size: 16px;
             text-transform: uppercase;
-            border: 2px solid #333333; /* Dark border */
-            box-shadow: 0 0 10px #333333; /* Dark shadow */
+            border: 2px solid #f39c12; /* Warm orange border */
+            box-shadow: 0 0 10px #f39c12; /* Subtle glow */
             cursor: pointer;
             transition: all 0.2s;
             display: inline-block;
         }
 
         .menu-item:hover {
-            background-color: #FFD700; /* Gold on hover */
-            color: #000000; /* Black text on hover */
-            transform: scale(1.1); /* Slight zoom on hover */
-            box-shadow: 0 0 15px #8B4513; /* Saddle brown shadow */
+            background-color: #f39c12; /* Warm orange on hover */
+            color: #1c1c1e; /* Dark background for text on hover */
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #66fcf1; /* Softer cyan glow */
         }
 
         /* Game Section */
@@ -142,8 +153,9 @@
         }
 
         canvas {
-            border: 1px solid #333;
-            background-color: #F0E68C; /* Khaki for the game area */
+            border: 2px solid #66fcf1; /* Softer cyan border */
+            background-color: #2d2d2f; /* Darker background for the game */
+            box-shadow: 0 0 10px #f39c12; /* Warm orange glow */
         }
 
         /* Blinking Title for a retro effect */
@@ -169,14 +181,16 @@
             pointer-events: none;
             background: repeating-linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, 0.1),
-                rgba(0, 0, 0, 0.1) 1px,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
                 rgba(255, 255, 255, 0) 2px
             );
             z-index: 9999;
         }
     </style>
 </head>
+
+
 <body>
 
     <header>
@@ -482,7 +496,7 @@
         <section id="game">
             <h2>Tired of science? - Play a game. </h2>
             <canvas id="gameCanvas" width="400" height="400"></canvas>
-            <p>Use the left and right arrow keys to move the basket and catch the objects!</p>
+            <p>Use the left and right arrow keys to move the racket!</p>
             <p>Email the score to get in touch!</p>
         </section>
     </main>
@@ -513,7 +527,8 @@
     let brickOffsetTop = 30;
     let brickOffsetLeft = 30;
     let score = 0;
-    let lives = 100;
+    let lives = 10;
+    let gameLoop; // Store the requestAnimationFrame reference to stop the game
 
     // Variables to handle Fibonacci sequence
     let fibPrev = 0; // First number in the Fibonacci sequence
@@ -551,7 +566,7 @@
     function drawBall() {
         ctx.beginPath();
         ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#ff00ff"; // Neon Magenta ball
         ctx.fill();
         ctx.closePath();
     }
@@ -559,7 +574,7 @@
     function drawPaddle() {
         ctx.beginPath();
         ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#00ffff"; // Neon Cyan paddle
         ctx.fill();
         ctx.closePath();
     }
@@ -574,7 +589,7 @@
                     bricks[c][r].y = brickY;
                     ctx.beginPath();
                     ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                    ctx.fillStyle = "#0095DD";
+                    ctx.fillStyle = "#9900cc"; // Neon Purple bricks
                     ctx.fill();
                     ctx.closePath();
                 }
@@ -584,13 +599,13 @@
 
     function drawScore() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#00ff00"; // Neon Green score
         ctx.fillText("Score: " + score, 8, 20);
     }
 
     function drawLives() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#ffff00"; // Neon Yellow lives
         ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
     }
 
@@ -612,7 +627,8 @@
 
                         // Check if all bricks are eliminated
                         if (checkWin()) {
-                            drawWinMessage(); // Show the win message
+                            stopGameWithWinMessage("Congrats! Did you get the score sequence?");
+                            return; // Exit the function after winning
                         }
                     }
                 }
@@ -632,14 +648,14 @@
         return true; // All bricks are destroyed
     }
 
-    // Draw the "You Won" message
-    function drawWinMessage() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.font = "24px Arial";
-        ctx.fillStyle = "#0095DD";
-        ctx.textAlign = "center";
-        ctx.fillText("YOU WON! Final Score: " + score, canvas.width / 2, canvas.height / 2);
+    // Stop the game and display the win or game over message
+    function stopGameWithWinMessage(message) {
         cancelAnimationFrame(gameLoop); // Stop the game loop
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the game field
+        ctx.font = "24px Arial";
+        ctx.fillStyle = "#ff00ff"; // Neon Magenta text
+        ctx.textAlign = "center";
+        ctx.fillText(message, canvas.width / 2, canvas.height / 2);
     }
 
     function draw() {
@@ -651,19 +667,31 @@
         drawLives();
         collisionDetection();
 
+        // Ball movement and screen bounds check
         if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
             dx = -dx;
         }
         if (y + dy < ballRadius) {
             dy = -dy;
         } else if (y + dy > canvas.height - ballRadius) {
+            // Ball hits the paddle
             if (x > paddleX && x < paddleX + paddleWidth) {
                 dy = -dy;
+
+                // Add a small randomness to the reflection to prevent repetitive patterns
+                dx += (Math.random() * 0.5) - 0.25; // Add small randomness to dx
+
+                // Reflect based on paddle movement direction
+                if (rightPressed) {
+                    dx += 0.5; // If paddle is moving right, push ball right
+                } else if (leftPressed) {
+                    dx -= 0.5; // If paddle is moving left, push ball left
+                }
             } else {
                 lives--;
                 if (!lives) {
-                    alert("GAME OVER");
-                    document.location.reload();
+                    stopGameWithWinMessage("GAME OVER");
+                    return; // Exit the function after game over
                 } else {
                     x = canvas.width / 2;
                     y = canvas.height - 30;
@@ -674,6 +702,7 @@
             }
         }
 
+        // Paddle movement
         if (rightPressed && paddleX < canvas.width - paddleWidth) {
             paddleX += 7;
         } else if (leftPressed && paddleX > 0) {
