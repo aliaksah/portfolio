@@ -687,12 +687,18 @@
                 } else if (leftPressed) {
                     dx -= 0.5; // If paddle is moving left, push ball left
                 }
+                if(score >= 987)
+                {
+                  stopGameWithWinMessage("Did you get score sequence?");
+                  return; // Exit the function after winning
+                }
             } else {
                 lives--;
                 if (!lives) {
                     stopGameWithWinMessage("GAME OVER");
                     return; // Exit the function after game over
-                } else {
+                } 
+                else {
                     x = canvas.width / 2;
                     y = canvas.height - 30;
                     dx = 2;
