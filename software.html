@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software &amp; Packages | Aliaksandr Hubin</title>
+    <meta name="description" content="Open-source scientific software, R packages, and Python toolboxes developed by Aliaksandr Hubin in Bayesian statistics, MCMC, and machine learning.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <span class="brand-name">Aliaksandr Hubin</span>
+                <span class="brand-title">NMBU &amp; University of Oslo</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">About</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="talks.html" class="nav-link">Talks</a></li>
+                    <li><a href="teaching.html" class="nav-link">Teaching &amp; Mentoring</a></li>
+                    <li><a href="software.html" class="nav-link active">Software</a></li>
+                    <li><a href="service.html" class="nav-link">Service</a></li>
+                    <li><a href="CV_Aliaksandr_Hubin.pdf" class="nav-link-cv" target="_blank" rel="noopener">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        CV (PDF)
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+
+            <div class="section-header">
+                <div>
+                    <h1 style="font-size: 2.1rem; margin-bottom: 0.35rem;">Software &amp; Open Source</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Officially published R packages on CRAN, Python tools in the spaCy Universe, and methodological implementations for scalable Bayesian inference and machine learning.
+                    </p>
+                </div>
+            </div>
+
+            <div class="software-grid">
+
+                <!-- FBMS -->
+                <div class="software-card" id="fbms">
+                    <div class="software-header">
+                        <span class="software-title">FBMS</span>
+                        <span class="software-badge">CRAN Package &bull; R</span>
+                    </div>
+                    <div class="software-desc">
+                        <strong>Flexible Bayesian Model Selection and Model Averaging</strong><br>
+                        A high-performance package for model selection and model averaging in generalized linear models (GLMs) and Bayesian generalized nonlinear models (BGNLMs). Implements mode jumping MCMC, subsampling MCMC, and genetic algorithm transformations for exploring complex non-linear feature spaces.
+                    </div>
+                    <div class="code-snippet">install.packages("FBMS")</div>
+                    <div class="software-footer">
+                        <a href="https://cran.r-project.org/package=FBMS" class="btn-pill primary" target="_blank" rel="noopener">CRAN Package</a>
+                        <a href="https://doi.org/10.1016/j.jocs.2026.102947" class="btn-pill" target="_blank" rel="noopener">JOCS Paper (2026)</a>
+                        <a href="https://arxiv.org/abs/2509.00753" class="btn-pill" target="_blank" rel="noopener">Tutorial (arXiv)</a>
+                    </div>
+                </div>
+
+                <!-- LBBNN -->
+                <div class="software-card" id="lbbnn">
+                    <div class="software-header">
+                        <span class="software-title">LBBNN</span>
+                        <span class="software-badge">CRAN Package &bull; R</span>
+                    </div>
+                    <div class="software-desc">
+                        <strong>Latent Binary Bayesian Neural Networks Using 'torch'</strong><br>
+                        Enables sparse, uncertainty-aware, and explainable deep learning by combining variational inference with latent binary variables and normalizing flows. Features input-skip connections to preserve interpretability and perform feature attribution in deep Bayesian neural architectures.
+                    </div>
+                    <div class="code-snippet">install.packages("LBBNN")</div>
+                    <div class="software-footer">
+                        <a href="https://cran.r-project.org/package=LBBNN" class="btn-pill primary" target="_blank" rel="noopener">CRAN Package</a>
+                        <a href="https://cran.r-project.org/web/packages/LBBNN/LBBNN.pdf" class="btn-pill" target="_blank" rel="noopener">CRAN Manual (PDF)</a>
+                        <a href="https://www.jair.org/index.php/jair/article/view/20433/27320" class="btn-pill" target="_blank" rel="noopener">JAIR Paper (2026)</a>
+                        <a href="https://journal.r-project.org/articles/RJ-2026-048/RJ-2026-048.pdf" class="btn-pill" target="_blank" rel="noopener">R Journal Article</a>
+                    </div>
+                </div>
+
+                <!-- depmixS4pp -->
+                <div class="software-card" id="depmixs4pp">
+                    <div class="software-header">
+                        <span class="software-title">depmixS4pp</span>
+                        <span class="software-badge">GitHub &bull; R</span>
+                    </div>
+                    <div class="software-desc">
+                        <strong>Adaptive Simulated Annealing EM for Hidden Markov Models</strong><br>
+                        An extension of the standard <code>depmixS4</code> package incorporating adaptive simulated annealing variable selection, non-homogeneous transition probabilities, and various forward prediction modes for complex time-series data.
+                    </div>
+                    <div class="code-snippet"># install.packages("devtools")
+devtools::install_github("aliaksah/depmixS4pp")</div>
+                    <div class="software-footer">
+                        <a href="https://github.com/aliaksah/depmixS4pp" class="btn-pill primary" target="_blank" rel="noopener">GitHub Repository</a>
+                        <a href="https://doi.org/10.1145/3371425.3371641" class="btn-pill" target="_blank" rel="noopener">ACM AIIPCC Paper</a>
+                    </div>
+                </div>
+
+                <!-- EMJMCMC -->
+                <div class="software-card" id="emjmcmc">
+                    <div class="software-header">
+                        <span class="software-title">EMJMCMC</span>
+                        <span class="software-badge">CRAN Package &bull; R</span>
+                    </div>
+                    <div class="software-desc">
+                        <strong>Evolutionary Mode Jumping Markov Chain Monte Carlo</strong><br>
+                        An expert toolbox for Bayesian model search and variable selection in multimodal posterior distributions. Combines genetic algorithm crossovers and mutations with local mode optimization and MCMC transitions to escape local optima.
+                    </div>
+                    <div class="code-snippet">install.packages("EMJMCMC")</div>
+                    <div class="software-footer">
+                        <a href="https://cran.r-project.org/package=EMJMCMC" class="btn-pill primary" target="_blank" rel="noopener">CRAN Package</a>
+                        <a href="https://doi.org/10.1214/18-BA1141" class="btn-pill" target="_blank" rel="noopener">Bayesian Analysis Paper</a>
+                    </div>
+                </div>
+
+                <!-- skweak -->
+                <div class="software-card" id="skweak">
+                    <div class="software-header">
+                        <span class="software-title">skweak</span>
+                        <span class="software-badge">Python &bull; spaCy</span>
+                    </div>
+                    <div class="software-desc">
+                        <strong>Weak Supervision Made Easy for NLP</strong><br>
+                        A Python toolkit for gathering, combining, and aggregating noisy supervision sources (heuristics, regexes, gazetteers, and machine learning models) into high-quality training labels using Hidden Markov Models. Featured in the spaCy Universe.
+                    </div>
+                    <div class="code-snippet">pip install skweak</div>
+                    <div class="software-footer">
+                        <a href="https://spacy.io/universe/project/skweak" class="btn-pill primary" target="_blank" rel="noopener">spaCy Universe</a>
+                        <a href="https://github.com/NorskRegnesentral/skweak" class="btn-pill" target="_blank" rel="noopener">GitHub Repo</a>
+                        <a href="https://aclanthology.org/2021.acl-demo.40" class="btn-pill" target="_blank" rel="noopener">ACL 2021 Paper</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p>&copy; 2026 Aliaksandr Hubin &bull; Academic Profile</p>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="talks.html">Talks</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="game.html" class="easter-egg-link">Break Room 🎮</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Mobile Nav Toggle Script -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

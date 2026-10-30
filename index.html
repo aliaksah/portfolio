@@ -3,762 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aliaksandr Hubin - Academic Profile</title>
-    
-    <!-- Google Font for Pixelated Text -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Body and Background */
-        body {
-            font-family: 'Press Start 2P', cursive; /* Pixel font */
-            background-color: #2a2a2e; /* Darker, soft gray background */
-            color: #66fcf1; /* Softer neon cyan */
-            margin: 0;
-            padding: 0;
-            overflow: auto; /* Enable scrolling */
-            font-size: 14px;
-        }
+    <title>Aliaksandr Hubin | Associate Professor in Statistics & Machine Learning</title>
+    <meta name="description" content="Academic website of Aliaksandr Hubin, Associate Professor at NMBU and University of Oslo. Research in Bayesian statistics, probabilistic machine learning, model selection, and deep learning.">
+    <meta name="author" content="Aliaksandr Hubin">
 
-        /* Header */
-        header {
-            background: #2d2d2f; /* Softer dark background */
-            color: #f39c12; /* Warm orange text */
-            padding: 10px 0;
-            text-align: center; /* Center alignment */
-            box-shadow: 0 0 10px #f39c12; /* Subtle warm glow */
-        }
+    <!-- Google Fonts for Academic Elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-        .profile-photo {
-            width: 150px;
-            height: 150px; /* Make it square */
-            object-fit: cover;
-            border-radius: 10px; /* Slightly rounded */
-            box-shadow: 0 0 10px #45a29e; /* Soft cyan glow */
-        }
-
-        /* Navigation Menu */
-        nav {
-            background: #3a3a3c; /* Softer dark background */
-            color: #66fcf1; /* Softer neon cyan text */
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        /* Make all hyperlinks neon green */
-        nav ul li a, 
-        a {
-            color: #39ff14; /* Neon green for hyperlinks */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        /* Hyperlinks remain neon green when visited or hovered */
-        nav ul li a:hover, 
-        a:hover, 
-        a:visited {
-            color: #39ff14; /* Neon green on hover and visited */
-            text-decoration: underline;
-        }
-
-        /* Main Content */
-        main {
-            padding: 20px 0;
-        }
-
-        section {
-            margin: 20px 0;
-            text-align: left; /* Left alignment for content */
-        }
-
-        h2 {
-            color: #f39c12; /* Warm orange for headings */
-            font-size: 18px;
-            text-shadow: 0 0 5px #f39c12; /* Soft orange glow */
-        }
-
-        h3 {
-            font-size: 16px;
-        }
-        
-        /* List Items */
-        ul {
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin-bottom: 10px;
-            color: #f1f1f1; /* Softer white for list items */
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #2d2d2f;
-            color: #f39c12; /* Warm orange footer text */
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 0 10px #45a29e; /* Subtle cyan glow */
-        }
-
-        /* Menu Wrapper */
-        .menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        /* Menu Items */
-        .menu-item {
-            background-color: #3a3a3c; /* Darker background */
-            color: #66fcf1; /* Softer neon cyan text */
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
-            text-transform: uppercase;
-            border: 2px solid #f39c12; /* Warm orange border */
-            box-shadow: 0 0 10px #f39c12; /* Subtle glow */
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-
-        .menu-item:hover {
-            background-color: #f39c12; /* Warm orange on hover */
-            color: #1c1c1e; /* Dark background for text on hover */
-            transform: scale(1.1);
-            box-shadow: 0 0 15px #66fcf1; /* Softer cyan glow */
-        }
-
-        /* Game Section */
-        #game {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 40px;
-        }
-
-        canvas {
-            border: 2px solid #66fcf1; /* Softer cyan border */
-            background-color: #2d2d2f; /* Darker background for the game */
-            box-shadow: 0 0 10px #f39c12; /* Warm orange glow */
-        }
-
-        /* Blinking Title for a retro effect */
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .blinking {
-            animation: blink 1s infinite;
-        }
-
-        /* Retro Scanline Effect */
-        body:after {
-            content: "";
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            pointer-events: none;
-            background: repeating-linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.05),
-                rgba(0, 0, 0, 0.05) 1px,
-                rgba(255, 255, 255, 0) 2px
-            );
-            z-index: 9999;
-        }
-    </style>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-
 <body>
 
-    <header>
-        <div class="container">
-            <h1 class="blinking">Aliaksandr Hubin</h1>
-            <p>Associate Professor, NMBU and University of Oslo</p>
-            <img src="hubin_cyber.jpg" alt="Your Photo" class="profile-photo">
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <span class="brand-name">Aliaksandr Hubin</span>
+                <span class="brand-title">NMBU &amp; University of Oslo</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">About</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="talks.html" class="nav-link">Talks</a></li>
+                    <li><a href="teaching.html" class="nav-link">Teaching &amp; Mentoring</a></li>
+                    <li><a href="software.html" class="nav-link">Software</a></li>
+                    <li><a href="service.html" class="nav-link">Service</a></li>
+                    <li><a href="CV_Aliaksandr_Hubin.pdf" class="nav-link-cv" target="_blank" rel="noopener">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        CV (PDF)
+                    </a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav>
+    <main class="site-main">
         <div class="container">
-            <ul>
-                <li><a href="#bio" class="menu-item">Bio</a></li>
-                <li><a href="#news" class="menu-item">News</a></li>
-                <li><a href="#publications" class="menu-item">Publications</a></li>
-                <li><a href="#software" class="menu-item">Software</a></li>
-                <li><a href="#reviewing" class="menu-item">Reviewing</a></li>
-                <li><a href="#training" class="menu-item">Training</a></li>
-                <li><a href="#teaching" class="menu-item">Teaching</a></li>
-                <li><a href="#mentoring" class="menu-item">Mentoring</a></li>
-                <li><a href="#contact" class="menu-item">Contact</a></li>
-            </ul>
+
+            <!-- Profile Hero Section -->
+            <section class="profile-hero">
+                <div class="profile-sidebar">
+                    <div class="profile-avatar-wrapper">
+                        <img src="profile.jpg" alt="Aliaksandr Hubin" class="profile-avatar">
+                    </div>
+                    <div class="profile-status-badge">
+                        <span class="status-dot"></span> Active Research &amp; Teaching
+                    </div>
+                    <div class="profile-links">
+                        <a href="https://scholar.google.com/citations?user=Lx-G8ckAAAAJ&hl=en" class="social-pill" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4 3.16V20H2v2h20v-2h-2v-7.34l4-3.16L12 0z"/></svg>
+                            Scholar
+                        </a>
+                        <a href="https://nva.sikt.no/research-profile/618922" class="social-pill" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+                            NVA / Cristin
+                        </a>
+                        <a href="https://orcid.org/0000-0002-3244-6571" class="social-pill" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.306v7.428h2.325c2.653 0 3.844-1.631 3.844-3.712 0-2.025-1.228-3.716-3.844-3.716h-2.325z"/></svg>
+                            ORCID
+                        </a>
+                        <a href="https://github.com/aliaksah" class="social-pill" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/aliaksandr-hubin-9504917a/" class="social-pill" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:aliaksandr.hubin@nmbu.no" class="social-pill">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            Email
+                        </a>
+                    </div>
+                    <a href="CV_Aliaksandr_Hubin.pdf" class="btn-cv" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
+                        Download CV (PDF)
+                    </a>
+                </div>
+
+                <div class="profile-content">
+                    <h1>Aliaksandr Hubin</h1>
+                    <div class="profile-positions">
+                        <div class="position-item">
+                            <span class="position-role">Associate Professor in Statistics</span> &bull; Norwegian University of Life Sciences (NMBU)
+                        </div>
+                        <div class="position-item">
+                            <span class="position-role">Associate Professor in Statistics</span> &bull; University of Oslo (UiO)
+                        </div>
+                    </div>
+
+                    <div class="profile-bio">
+                        <p>
+                            I am an Associate Professor in Statistics and Data Science based in Norway. My research is situated at the intersection of <strong>Bayesian statistics</strong>, <strong>probabilistic machine learning</strong>, and <strong>computational statistics</strong>. 
+                        </p>
+                        <p>
+                            My primary methodological focus includes scalable Bayesian model selection and model averaging (BMA), efficient Markov chain Monte Carlo (MCMC) algorithms, Variational Bayes, and sparse explainable deep learning through Latent Binary Bayesian Neural Networks (LBBNN). I actively apply these frameworks to complex problems in genomics, biostatistics, sports medicine, and operations research.
+                        </p>
+                    </div>
+
+                    <div class="research-tags-container">
+                        <div class="tags-label">Key Research Areas</div>
+                        <div class="tags-list">
+                            <span class="research-tag">Bayesian Statistics</span>
+                            <span class="research-tag">Model Selection &amp; Averaging (BMA)</span>
+                            <span class="research-tag">Bayesian Deep Learning (LBBNN)</span>
+                            <span class="research-tag">MCMC &amp; Mode Jumping Algorithms</span>
+                            <span class="research-tag">Variational Inference</span>
+                            <span class="research-tag">Explainable AI &amp; Sparsity</span>
+                            <span class="research-tag">Biostatistics</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Metrics Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">📚</div>
+                    <div class="metric-data">
+                        <h4>40+</h4>
+                        <p>Journal &amp; Conference Papers</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🎤</div>
+                    <div class="metric-data">
+                        <h4>50+</h4>
+                        <p>Talks &amp; Posters</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🎓</div>
+                    <div class="metric-data">
+                        <h4>10+</h4>
+                        <p>PhD &amp; Master's Supervised</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">⚙️</div>
+                    <div class="metric-data">
+                        <h4>5</h4>
+                        <p>Open-Source R/Python Packages</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Major News Section -->
+            <section class="section-block" id="news">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span>📰</span> Recent News &amp; Highlights (2025 – 2026)
+                    </h2>
+                    <a href="publications.html" class="section-more-link">All Publications &rarr;</a>
+                </div>
+
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Sep</span>
+                            <span class="year">2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">PhD Defence: Lars Skaaret-Lund Defended at NMBU</h3>
+                            <p class="timeline-text">
+                                Warm congratulations to my supervised PhD student <strong>Dr. Lars Skaaret-Lund</strong> on successfully defending his doctoral thesis: <em>"Sparse, uncertainty-aware and explainable deep learning via Latent Binary Bayesian Neural Networks"</em> at NMBU (September 2026)!
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="teaching.html#phd" class="btn-pill">View Mentoring</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Jul</span>
+                            <span class="year">2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Organizing and Editing Proceedings for IWSM 2026</h3>
+                            <p class="timeline-text">
+                                Co-organizing the <strong>40th International Workshop on Statistical Modelling (IWSM 2026)</strong> in Oslo, Norway (June 28 – July 3, 2026) and co-editing the workshop proceedings volume (ISBN: 9788255325000). Submissions and program details available on the conference website.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="https://www.mn.uio.no/math/english/research/groups/statistics-data-science/events/conferences/iwsm2026" class="btn-pill" target="_blank" rel="noopener">IWSM 2026 Portal</a>
+                                <a href="https://www.mn.uio.no/math/english/research/groups/statistics-data-science/events/conferences/iwsm2026/proceedings/proceedings_iwsm2026_proofonline.pdf" class="btn-pill" target="_blank" rel="noopener">Proceedings PDF</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Jul</span>
+                            <span class="year">2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">New Paper in Journal of Artificial Intelligence Research (JAIR)</h3>
+                            <p class="timeline-text">
+                                <em>"Explainable Bayesian Deep Learning through Input-skip Latent Binary Bayesian Neural Networks"</em> with Eirik Høyheim, Lars Skaaret-Lund, and Solve Sæbø is now published in <strong>JAIR</strong>.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="https://www.jair.org/index.php/jair/article/view/20433/27320" class="btn-pill primary" target="_blank" rel="noopener">JAIR Official Article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Jun</span>
+                            <span class="year">2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Scientific Committee for NORDSTAT 2026</h3>
+                            <p class="timeline-text">
+                                Proud to serve on the Scientific Committee of <strong>NORDSTAT 2026</strong>, hosted by the Department of Mathematics and Statistics at the University of Helsinki, June 1–4, 2026.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="https://www.helsinki.fi/en/conferences/nordstat-2026" class="btn-pill" target="_blank" rel="noopener">Conference Info</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Apr</span>
+                            <span class="year">2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">FBMS R Package Article Published in Journal of Computational Science</h3>
+                            <p class="timeline-text">
+                                Our paper <em>"FBMS: An R package for flexible Bayesian model selection and averaging with nonlinear models"</em> (with F. Frommlet, J. Lachmann, and G. O. Storvik) is officially published in the <strong>Journal of Computational Science</strong>.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="https://doi.org/10.1016/j.jocs.2026.102947" class="btn-pill" target="_blank" rel="noopener">doi:10.1016/j.jocs.2026.102947</a>
+                                <a href="https://cran.r-project.org/package=FBMS" class="btn-pill" target="_blank" rel="noopener">CRAN Package</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Apr</span>
+                            <span class="year">2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Talks at JSM 2026, IBC 2026, and UiO Seminar Series</h3>
+                            <p class="timeline-text">
+                                Presenting new methodology on Bayesian Model Selection and Averaging with LBBNNs at <strong>JSM 2026</strong> in Boston, optimal dosage estimation at <strong>IBC 2026</strong>, and an invited talk at the <strong>University of Oslo Seminar Series in Statistics and Data Science</strong>.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="talks.html" class="btn-pill">View All Talks &amp; Posters</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Jan</span>
+                            <span class="year">2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Area Chair at ICML 2026</h3>
+                            <p class="timeline-text">
+                                Appointed as <strong>Area Chair</strong> for the <strong>43rd International Conference on Machine Learning (ICML 2026)</strong>.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="service.html" class="btn-pill">View Service</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Sep</span>
+                            <span class="year">2025</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Invited Talk at ROeS 2025 &amp; STRATOS-TG2 Session</h3>
+                            <p class="timeline-text">
+                                Delivered an invited presentation in the STRATOS-TG2 session at <strong>ROeS 2025</strong> (Austro-Swiss Region of IBS): <em>"Contrasting Bayesian and frequentist model building for descriptive research questions — a paired-design experiment of STRATOS-TG2: Insights From the Kepler Task and Bacteremia Task Reanalysis with a Focus on Bayesian Model Averaging"</em>.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="https://stratostg2.github.io/assets/Aliaksandr_slides_Roes_2025.pdf" class="btn-pill" target="_blank" rel="noopener">View Slides (PDF)</a>
+                                <a href="https://roes2025.at/data/ROeS_conference_book_v1.3.pdf" class="btn-pill" target="_blank" rel="noopener">Conference Program</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Jun</span>
+                            <span class="year">2025</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Supervised Four Master's Graduates at University of Oslo</h3>
+                            <p class="timeline-text">
+                                Four master's students successfully graduated under my supervision at UiO: <strong>Sander F. Ørnes</strong> (BGNLM and GMJMCMC for Time Series), <strong>Sigurd Myhre Vittersø</strong> (Genetic Ensemble of Trees), <strong>Kristoffer Solli Larsen</strong> (Multimodal posterior sampling), and <strong>Ylva Sofie Tollefsen</strong> (Improved transformations for BGNLM search).
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="teaching.html#master" class="btn-pill">View Theses &amp; Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Jun</span>
+                            <span class="year">2025</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Published in Women in Sport &amp; Physical Activity Journal</h3>
+                            <p class="timeline-text">
+                                <em>"Safety of Heavy Resistance Exercise During Pregnancy and Postpartum: A Controlled, Prospective Cohort Study"</em> with T. F. Mathisen, M. Mountjoy, and J. Sundgot-Borgen published in <strong>Women in Sport &amp; Physical Activity Journal</strong>.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="https://doi.org/10.1123/wspaj.2025-0010" class="btn-pill" target="_blank" rel="noopener">doi:10.1123/wspaj.2025-0010</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Background Section -->
+            <section class="section-block" id="background">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span>🏛️</span> Academic Background &amp; Education
+                    </h2>
+                </div>
+
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>PhD</span>
+                            <span class="year">2018</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">PhD in Statistics &bull; University of Oslo, Norway</h3>
+                            <p class="timeline-text">
+                                <strong>Faculty of Mathematics and Natural Sciences</strong> (Aug 2014 – Aug 2018)<br>
+                                Dissertation: <em>"Bayesian model configuration, selection and averaging in complex regression contexts"</em><br>
+                                Supervised by Prof. Geir Olve Storvik and Assoc. Prof. Florian Frommlet.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>MSc</span>
+                            <span class="year">2014</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Master of Science in Operations Research &bull; Molde University College, Norway</h3>
+                            <p class="timeline-text">
+                                <strong>Faculty of Economics, Informatics and Social Research</strong> (Aug 2012 – Jun 2014)<br>
+                                Thesis: <em>"Evaluation of Supply Vessel schedules robustness with a posteriori improvements"</em>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">
+                            <span>Spec.</span>
+                            <span class="year">2013</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Specialist Diploma in Econometrics &amp; Statistics &bull; Belarusian State University</h3>
+                            <p class="timeline-text">
+                                <strong>Faculty of Applied Mathematics and Computer Science</strong> (Sep 2008 – Jun 2013)<br>
+                                Thesis: <em>"Methods and tools of investment management in conditions of international diversifications"</em>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="section-block" id="contact">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span>✉️</span> Contact Information
+                    </h2>
+                </div>
+                <div class="pub-card">
+                    <p style="margin-bottom: 0.75rem;">
+                        <strong>Email:</strong> <a href="mailto:aliaksandr.hubin@nmbu.no">aliaksandr.hubin@nmbu.no</a>
+                    </p>
+                    <p style="margin-bottom: 0.75rem;">
+                        <strong>Department:</strong> Bioinformatics and Applied Statistics, Norwegian University of Life Sciences (NMBU), Ås, Norway
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        <strong>Affiliation:</strong> Department of Mathematics, Faculty of Mathematics and Natural Sciences, University of Oslo, Blindern, Oslo, Norway
+                    </p>
+                </div>
+            </section>
+
         </div>
-    </nav>
- <main>
-        <section id="bio" class="bio">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    I am an Associate Professor with a focus on Statistics, Artificial Intelligence, Machine Learning, and Operations Research. My academic training spans across three institutions, culminating in a PhD in Statistics from the University of Oslo, Norway. My research interests include Bayesian statistics, Bayesian model selection and averaging, efficient MCMC and Variational Bayes inference procedures, and probabilistic machine learning. I have published extensively in these areas and am actively involved in mentoring the next generation of scholars. I am also the chair of the board of the Oslo section of the norwegian statistical association. 
-                </p>
-                <p>
-                    Research and Social Profiles:
-                    <ul>
-                        <li><a href="https://scholar.google.com/citations?user=Lx-G8ckAAAAJ&hl=en">Google Scholar</a></li>
-                        <li><a href="https://nva.sikt.no/research-profile/618922">NVI</a></li>
-                        <li><a href="https://www.linkedin.com/in/aliaksandr-hubin-9504917a/">LinkedIn</a></li>
-                        <li><a href="https://x.com/AliaksandrHubin">Twitter</a></li>
-                    </ul>
-                </p>
-            </div>
-        </section>
-
-        <section id="news" class="news">
-            <div class="container">
-                <h2>Major news</h2>
-                <ul>
-                <li>Gave a <a href="https://stratostg2.github.io/assets/Aliaksandr_slides_Roes_2025.pdf"> talk</a> at a special invited sesstion: Contrasting Bayesian and frequentist model building for descriptive research questions - a paired-design experiment of STRATOS-TG2,  <a href="https://www.roes2025.at/data/ROeS_conference_book_v1.3.pdf"> at ROES 2025</a>.</li>  
-                <li>FBMS version 1.2 released, <a href="https://cran.r-project.org/web/packages/FBMS/index.html"> CRAN</a>. With accompanying tutorials, <a href="https://arxiv.org/abs/2509.00753"> arXiv:2509.00753</a>.</li>  
-                <li>Proud of the my four new master students (Ylva, Sigurd, Sander, and Kristoffer) <a href="https://www.mn.uio.no/math/studier/aktuelt/arrangementer/master-2025"> graduated at UiO</a>.</li>  
-                <li>Joined the scientific commitee of: <a href="https://www.helsinki.fi/en/conferences/nordstat-2026#:~:text=The%20Department%20of%20Mathematics%20and,on%20June%201-4%202026.">NORDSTAT 2026</a>.</li>
-                <li>A new preprint: <a href="https://arxiv.org/pdf/2503.10496">"Explainable Bayesian deep learning through input-skip Latent Binary Bayesian Neural Networks."</a></li>
-                <li>Co-organizing <a href="https://www.mn.uio.no/math/english/research/groups/statistics-data-science/events/conferences/iwsm2026">IWSM 2026</a>. Submissions open soon.</li>
-                <li>A new paper in Nordic Machine Intelligence: <a href="https://journals.uio.no/NMI/article/view/11406">"Outlier Detection in Bayesian Neural Networks: Exploring Pre-activations and Predictive Entropy."</a></li>
-                <li>Gave an invited lecture: <a href="https://www.upf.edu/web/econ/statistics-seminar-series">"A subsampling MCMC approach for Bayesian model selection and model averaging"</a> at Universitat Pompeu Fabra, <a href="https://github.com/aliaksah/portfolio/blob/gh-pages/slides/Hubin_Subsampling_MCMC_Barcelona_24.pdf">slides.</li>
-                <li>Our discussion on: <a href="https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2F24-BA1423">Sparse Bayesian factor analysis when the number of factors is unknown by Frühwirth-Schnatter, Hosszejni, and Lopes</a> is now published in Bayesian Analysis (pages 109-112).</li>
-                <li><a href="https://www.hiof.no/english/about/news-events/news/2024/aliaksandr-and-bayesian-methods.html">My interview</a> for Østfold AI hub is out.</li>
-                <li>My PhD student's first paper is now published in TMLR: <a href="https://openreview.net/pdf?id=d6kqUKzG3V">Sparsifying Bayesian neural networks with latent binary variables and normalizing flows</a>.</li>
-                <li>New paper in Neural Computing and Applications out <a href="https://link.springer.com/article/10.1007/s00521-024-10349-1/">Evolutionary variational inference for Bayesian generalized nonlinear models</a>.</li>
-                <li>Humbled to be mentioned among top reviewers in UAI <a href="https://www.auai.org/uai2024/top_reviewers">auai.org/uai2024/top_reviewers</a>.</li>
-                <li>Two ICML 2024 papers out <a href="https://proceedings.mlr.press/v235/papamarkou24b.html">Position: Bayesian Deep Learning is Needed in the Age of Large-Scale AI</a> and <a href="https://proceedings.mlr.press/v235/hajj24a.html">Incorporating probabilistic domain knowledge into deep multiple instance learning</a>.</li>
-                <li> Organized by us NSM24 was a success story. Thanks to eveyone involved! <a href="https://sites.google.com/view/nsm24/hjem">Det 21. norske statistikermøtet</a>.
-                  </li>
-                <!-- Add news articles or updates here -->
-                </ul>
-            </div>
-        </section>
-
-       
-
-        </section>
-
-        <section id="training" class="training">
-            <div class="container">
-                <h2>Academic Background</h2>
-                <ul>
-                    <li>
-                        <strong>University of Oslo, Oslo, Norway — PhD</strong><br>
-                        August 2014 - August 2018<br>
-                        Faculty of Mathematics and Natural Sciences<br>
-                        Specialty: Statistics<br>
-                        Dissertation: "Bayesian model configuration, selection and averaging in complex regression contexts".
-                    </li>
-                    <li>
-                        <strong>Molde University College (Specialized University), Molde, Norway — Master of Science</strong><br>
-                        August 2012 - June 2014<br>
-                        Faculty of Economics, Informatics and Social Research<br>
-                        Specialty: Operations Research<br>
-                        Research Thesis: "Evaluation of Supply Vessel schedules robustness with a posteriori improvements".
-                    </li>
-                    <li>
-                        <strong>Belarusian State University, Minsk, Belarus — Specialist (Diploma)</strong><br>
-                        September 2008 - June 2013<br>
-                        Faculty of Applied Mathematics and Computer Science<br>
-                        Specialty: Econometrics and Statistics<br>
-                        Research Thesis: "Methods and tools of investment management in conditions of international diversifications".
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="teaching" class="teaching">
-            <div class="container">
-                <h2>Teaching</h2>
-                <h3>Courses Taught:</h3>
-                <ul>
-                    <li>STK2130 - Modeling by Stochastic Processes (plenary sessions and exercises)</li>
-                    <li>STK3100 - Introduction to generalized linear models (exercises)</li>
-                    <li>STK4900 - Statistical methods and applications (plenary sessions and exercises)</li>
-                    <li>STK2100 - Machine Learning and Statistical Methods for Prediction and Classification (lecturing)</li>
-                    <li>STIN300 - Statistical programming in R (co-lecturing)</li>
-                </ul>
-            </div>
-        </section>
-
- <section id="mentoring" class="mentoring">
-            <section id="mentoring" class="mentoring">
-    <div class="container">
-        <h2>Mentoring</h2>
-        <p>Master theses supervised:</p>
-        <ul>
-            <li>
-                <strong>Extending BGNLM and GMJMCMC for Time Series.</strong><br>
-                Sander F. Ørnes. 2025, UIO<br>
-                <a href="https://www.duo.uio.no/bitstream/handle/10852/121568/Sander_Finnset_-rnes_Master-DS.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Genetic Ensemble of Trees as a special case of BGNLM.</strong><br>
-                Sigurd Myhre Vittersø. 2025, UIO<br>
-                <a href="https://www.duo.uio.no/bitstream/handle/10852/121175/sigurd_myhre_vitterso_thesis.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Sampling from multimodal posteriors.</strong><br>
-                Kristoffer Solli Larsen, UIO<br>
-                <a href="https://www.duo.uio.no/handle/10852/120833">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Improved Algorithms for BGNLM: Introducing New Transformations for Model Search.</strong><br>
-                Ylva Sofie Tollefsen. 2025, UIO<br>
-                <a href="https://www.mn.uio.no/math/studier/aktuelt/arrangementer/master-2025/mastereksamen-DS-Tollefsen.html">Defence details</a>
-            </li>
-            <li>
-                <strong>Improving sparsity and interpretability of latent binary Bayesian neural networks by introducing input-skip connections.</strong><br>
-                Eirik Høyheim. 2024, NMBU<br>
-                <a href="https://nmbu.brage.unit.no/nmbu-xmlui/bitstream/handle/11250/3147960/no.nmbu:wiseflow:7110451:59111978.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Subsampling Strategies for Bayesian Variable Selection and Model Averaging in GLM and BGNLM.</strong><br>
-                Jon Lachmann. 2021, Stockholm University<br>
-                <a href="https://www.diva-portal.org/smash/get/diva2:1578383/FULLTEXT01.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Combining Variational Bayes and GMJMCMC for Scalable Inference on Bayesian Generalized Nonlinear Models.</strong><br>
-                Philip Sebastian Hauglie Sommerfelt. 2023, UIO<br>
-                <a href="https://www.duo.uio.no/bitstream/handle/10852/103603/Philip_Sommerfelt_Mastersoppgave_endelig.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Using Graph Bayesian Neural Networks for fraud pattern detection and classification from bank transactions data.</strong><br>
-                Osama Abidi. 2023, NMBU<br>
-                <a href="https://nmbu.brage.unit.no/nmbu-xmlui/bitstream/handle/11250/3079864/no.nmbu%3awiseflow%3a6839497%3a54591502.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Outlier Detection in Bayesian Neural Networks.</strong><br>
-                Herman Ellingsen. 2023, NMBU<br>
-                <a href="https://nmbu.brage.unit.no/nmbu-xmlui/bitstream/handle/11250/3078663/no.nmbu%3awiseflow%3a6839497%3a54591500.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Spherical Priors for Bayesian Deep Learning.</strong><br>
-                Leif-Martin Sæther Sunde. 2023, UIO<br>
-                <a href="https://www.duo.uio.no/bitstream/handle/10852/103826/LMSUNDE_Mastersthesis.pdf">Read Thesis</a>
-            </li>
-            <li>
-                <strong>Improving latent binary Bayesian neural networks using the local reparametrization trick and normalizing flows.</strong><br>
-                Lars Skaaret-Lund. 2022, UIO<br>
-                <a href="https://www.duo.uio.no/bitstream/handle/10852/95387/1/LarsSkaaret-LundMastersthesis.pdf">Read Thesis</a>
-            </li>
-        </ul>
-    </div>
-</section>
-
- <section id="publications" class="publications">
-    <div class="container">
-        <h2>Selected Publications</h2>
-        <ul>
-            <li>
-                Hauglie Sommerfelt, Philip Sebastian & Hubin, Aliaksandr (2024). 
-                Sparsifying Bayesian neural networks with latent binary variables and normalizing flows. <i>Transactions on Machine Learning Research (TMLR)</i>.  
-                <a href="https://openreview.net/pdf?id=d6kqUKzG3V"> Full text</a>
-            </li>
-            <li>
-                al Hajj, Ghadi; Hubin, Aliaksandr; Kanduri, Chakravarthi; Pavlovic, Milena; Rand, Knut Dagestad & Widrich, Michael [Show all 11 contributors for this article] (2024). 
-                Incorporating probabilistic domain knowledge into deep multiple instance learning. <i>Proceedings of Machine Learning Research (PMLR)</i>. ISSN 2640-3498. 235, p. 17279–17297.
-                <a href="https://proceedings.mlr.press/v235/hajj24a.html" target="_blank">Full text</a>
-            </li>
-            <li>
-                Hauglie Sommerfelt, Philip Sebastian & Hubin, Aliaksandr (2024). 
-                Evolutionary variational inference for Bayesian generalized nonlinear models. <i>Neural Computing & Applications</i>. ISSN 0941-0643. p. 1–18. 
-                <a href="https://link.springer.com/article/10.1007/s00521-024-10349-1" target="_blank">doi: 10.1007/s00521-024-10349-1</a>
-            </li>
-            <li>
-                Papamarkou, Theodore; Skoularidou, Maria; Palla, Konstantina; Aitchison, Laurence; Arbel, Julyan & Dunson, David [Show all 25 contributors for this article] (2024). 
-                Position: Bayesian Deep Learning is Needed in the Age of Large-Scale AI. <i>Proceedings of Machine Learning Research (PMLR)</i>. ISSN 2640-3498. 235, p. 39556–39586. 
-                <a href="https://proceedings.mlr.press/v235/papamarkou24b.html" target="_blank">doi: 10.48550/arXiv.2402.00809</a>
-            </li>
-            <li>
-                Digranes, Nora; Hoeberg, Emma; Lervik, Andreas; Hubin, Aliaksandr; Nordgreen, Janicke & Haga, Henning Andreas (2024). 
-                Motor effects of fentanyl in isoflurane-anaesthetized pigs and the subsequent effect of ketanserin or naloxone. <i>Veterinary Anaesthesia and Analgesia</i>. ISSN 1467-2987. 51(5), p. 491–499. 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/39142980/" target="_blank">doi: 10.1016/j.vaa.2024.07.002</a>
-            </li>
-            <li>
-                Siciliani, Daphne; Hubin, Aliaksandr; Ruyter, Bente Synnøve; Chikwati, Elvis Mashingaidze; Thunes, Vebjørn Gunnarson & Valen, Elin Christine [Show all 10 contributors for this article] (2024). 
-                Effects of dietary fish to rapeseed oil ratio on steatosis symptoms in Atlantic salmon (Salmo salar L) of different sizes. <i>Scientific Reports</i>. ISSN 2045-2322. 14(1), p. 1–18. 
-                <a href="https://www.nature.com/articles/s41598-024-68434-3" target="_blank">doi: 10.1038/s41598-024-68434-3</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr & Storvik, Geir Olve (2024). 
-                Sparse Bayesian Neural Networks: Bridging Model and Parameter Uncertainty through Scalable Variational Inference. <i>Mathematics</i>. ISSN 2227-7390. 12(6). 
-                <a href="https://www.mdpi.com/2227-7390/12/6/788" target="_blank">doi: 10.3390/math12060788</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr; Heinze, Georg & De Bin, Riccardo (2023). 
-                Fractional Polynomial Models as Special Cases of Bayesian Generalized Nonlinear Models. <i>Fractal and Fractional</i>. 7(9), p. 1–23. 
-                <a href="https://www.mdpi.com/2504-3110/7/9/641" target="_blank">doi: 10.3390/fractalfract7090641</a>
-            </li>
-            <li>
-                Lachmann, Jon; Storvik, Geir Olve; Frommlet, Florian & Hubin, Aliaksandr (2022). 
-                A subsampling approach for Bayesian model selection. <i>International Journal of Approximate Reasoning</i>. ISSN 0888-613X. 151, p. 33–63. 
-                <a href="https://www.duo.uio.no/handle/10852/99863" target="_blank">doi: 10.1016/j.ijar.2022.08.018</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr & De Bin, Riccardo (2022). 
-                On a genetically modified mode jumping MCMC approach for multivariate fractional polynomials. In Torelli, Nicola; BELLIO, RUGGERO & MUGGEO, VITO (Ed.), <i>Proceedings of the 36th International Workshop on Statistical Modelling</i>. EUT Edizioni Università di Trieste. ISSN 978-88-5511-309-0. p. 478–483.
-            </li>
-            <li>
-                Gåsemyr, Jørund Inge & Hubin, Aliaksandr (2022). 
-                Prior distributions expressing ignorance about convex increasing failure rates. <i>Scandinavian Journal of Statistics</i>. ISSN 0303-6898. 
-                <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/sjos.12588" target="_blank">doi: 10.1111/sjos.12588</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr; Storvik, Geir & Frommlet, Florian (2021). 
-                Flexible Bayesian Nonlinear Model Configuration. <i>The Journal of Artificial Intelligence Research</i>. ISSN 1076-9757. 72, p. 901–942. 
-                <a href="https://jair.org/index.php/jair/article/view/13047" target="_blank">doi: 10.1613/JAIR.1.13047</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr; Frommlet, Florian & Storvik, Geir Olve (2021). 
-                Reversible genetically modified mode jumping MCMC. In Makridis, Andreas; Milienos, Fotios; Papastamoulis, Panagiotis; Parpoula, Christina & Rakitzis, Athanasios (Ed.), <i>22nd European Young Statisticians Meeting – Proceedings</i>. Department of Psychology & Department of Sociology, School of Social Science, Panteion University of Social and Political Sciences. ISSN 978-960-7943-23-1. p. 35–40.
-            </li>
-            <li>
-                Lison, Pierre; Barnes, Jeremy & Hubin, Aliaksandr (2021). 
-                skweak: Weak Supervision Made Easy for NLP. In Ji, Heng & Park, Jong (Ed.), <i>Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations</i>. Association for Computational Linguistics. ISSN 978-1-954085-56-5. p. 337–346. 
-                <a href="https://aclanthology.org/2021.acl-demo.40" target="_blank">doi: 10.18653/v1/2021.acl-demo.40</a>
-            </li>
-            <li>
-                Lison, Pierre; Barnes, Jeremy; Hubin, Aliaksandr & Touileb, Samia (2020). 
-                Named Entity Recognition without Labelled Data: A Weak Supervision Approach. In Jurafsky, Dan; Chai, Joyce; Schluter, Natalie & Tetreault, Joel (Ed.), <i>Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</i>. Association for Computational Linguistics. ISSN 978-1-952148-25-5. p. 1518–1533.
-            </li>
-            <li>
-                Hubin, Aliaksandr; Storvik, Geir Olve; Grini, Paul Eivind & Butenko, Melinka Alonso (2020). 
-                A Bayesian binomial regression model with latent gaussian processes for modelling DNA methylation. <i>Austrian Journal of Statistics</i>. ISSN 1026-597X. 49(4), p. 46–56. 
-                <a href="https://ajs.or.at/index.php/ajs/article/view/1124" target="_blank">doi: 10.17713/ajs.v49i4.1124</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr; Storvik, Geir Olve; Grini, Paul Eivind & Butenko, Melinka Alonso (2019). 
-                Bayesian binomial regression model with a latent Gaussian field for analysis of epigenetic data. In Kharin, Y & Filzmoser, Peter (Ed.), <i>Proceedings of Computer Data Analysis and Modeling: Stochastics and Data Science 2019</i>. Belarusian State University Press. ISSN 978-985-566-811-5. p. 167–171.
-            </li>
-            <li>
-                Hubin, Aliaksandr (2019). 
-                An adaptive simulated annealing EM algorithm for inference on non-homogeneous hidden Markov models, <i>ACM International Conference Proceeding Series (ICPS): AIIPCC '19: Proceedings of the International Conference on Artificial Intelligence, Information Processing and Cloud Computing</i>. Association for Computing Machinery (ACM). ISSN 978-1-4503-7633-4. p. 1–9. 
-                <a href="https://dl.acm.org/doi/10.1145/3371425.3371641" target="_blank">doi: 10.1145/3371425.3371641</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr; Storvik, Geir Olve & Frommlet, Florian (2018). 
-                A Novel Algorithmic Approach to Bayesian Logic Regression. <i>Bayesian Analysis</i>. ISSN 1936-0975. 15(1), p. 263–311. 
-                <a href="https://projecteuclid.org/journals/bayesian-analysis/volume-15/issue-1/A-Novel-Algorithmic-Approach-to-Bayesian-Logic-Regression-with-Discussion/10.1214/18-BA1141.full" target="_blank">doi: 10.1214/18-BA1141</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr & Storvik, Geir Olve (2018). 
-                Mode jumping MCMC for Bayesian variable selection in GLMM. <i>Computational Statistics & Data Analysis</i>. ISSN 0167-9473. 127, p. 281–297. 
-                <a href="https://www.duo.uio.no/handle/10852/65654" target="_blank">doi: 10.1016/j.csda.2018.05.020</a>
-            </li>
-            <li>
-                Hubin, Aliaksandr & Storvik, Geir Olve (2016). 
-                On Mode Jumping in MCMC for Bayesian Variable Selection within GLMM. In Aivazian, S; Filzmoser, Peter & Kharin, Y (Ed.), <i>COMPUTER DATA ANALYSIS AND MODELING. Theoretical and Applied Stochastics. Proceedings of the XI International Conference</i>. Belarusian State University. ISSN 978-985-553-366-6. p. 275–278.
-            </li>
-        </ul>
-    </div>
-</section>
-
-
-
-        <section id="software" class="software">
-            <div class="container">
-                <h2>Software</h2>
-                <p>Here you can find officially published software tools and packages I have developed or contributed to:</p>
-                <ul>
-                    <li>EMJMCMC: Evolutionary Mode Jumping Markov Chain Monte Carlo Expert Toolbox - <a href="https://cran.r-project.org/web/packages/EMJMCMC/index.html">CRAN Link</a></li>
-                    <li>FBMS: Flexible Bayesian Model Selection and Model Averaging - <a href="https://cran.r-project.org/web/packages/FBMS/index.html">CRAN Link</a></li>
-                    <li>skweak: Weak supervision for NLP - <a href="https://spacy.io/universe/project/skweak">Spacy Link</a></li>
-                </ul>
-            </div>
-        </section>
-
-<section id="reviewing" class="reviewing">
-    <div class="container">
-        <h2>Reviewing</h2>
-        <p>I have served as a reviewer for the following journals and conferences:</p>
-        <ul>
-            <li><a href="https://www.nature.com/srep/" target="_blank">Scientific Reports</a></li>
-            <li><a href="https://onlinelibrary.wiley.com/journal/14679469" target="_blank">Scandinavian Journal of Statistics</a></li>
-            <li><a href="https://www.tandfonline.com/toc/uasa20/current" target="_blank">Journal of the American Statistical Association</a></li>
-            <li><a href="https://projecteuclid.org/journals/annals-of-applied-statistics" target="_blank">Annals of Applied Statistics</a></li>
-            <li><a href="https://link.springer.com/journal/180" target="_blank">Computational Statistics</a></li>
-            <li><a href="https://link.springer.com/journal/10651">Environmental and Ecological Statistics</a></li>
-            <li><a href="https://aclanthology.org/venues/acl/" target="_blank">Annual Meetings of Association of Computational Linguistics</a></li>
-            <li><a href="https://aclanthology.org/venues/emnlp/" target="_blank">Empirical Methods for Natural Language Processing</a></li>
-            <li><a href="https://journals.sagepub.com/home/smr" target="_blank">Statistical Methods in Medical Research</a></li>
-            <li><a href="https://www.journals.elsevier.com/computational-statistics-and-data-analysis" target="_blank">Computational Statistics and Data Analysis</a></li>
-            <li><a href="https://dergipark.org.tr/en/pub/hujms" target="_blank">Hacettepe Journal of Mathematics and Statistics</a></li>
-            <li><a href="https://www.cambridge.org/core/journals/natural-language-engineering" target="_blank">Natural Language Engineering</a></li>
-            <li><a href="https://www.uai.org/" target="_blank">Uncertainty in Artificial Intelligence</a></li>
-            <li><a href="https://bernoullisociety.org/organization/erc/eysm" target="_blank">European Young Statisticians Meetings</a></li>
-            <li><a href="https://www.tandfonline.com/toc/ucgs20/current" target="_blank">Journal of Computational and Graphical Statistics</a></li>
-        </ul>
-    </div>
-</section>
-
-       
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact Information</h2>
-                <p>Email: <a href="mailto:aliaksandr.hubin@nmbu.no">aliaksandr.hubin@nmbu.no</a></p>
-                <p>Connect with me on <a href="https://www.linkedin.com/in/aliaksandr-hubin-9504917a/">LinkedIn</a></p>
-            </div>
-        </section>
-   
-        <!-- Game Section -->
-        <section id="game">
-            <h2>Tired of science? - Play a game. </h2>
-            <canvas id="gameCanvas" width="400" height="400"></canvas>
-            <p>Use the left and right arrow keys to move the racket!</p>
-            <p>Email the score to get in touch!</p>
-        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Aliaksandr Hubin</p>
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p>&copy; 2026 Aliaksandr Hubin &bull; Academic Profile</p>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="talks.html">Talks</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="game.html" class="easter-egg-link">Break Room 🎮</a></li>
+            </ul>
+        </div>
     </footer>
 
-<script>
-    // Variables for the game state
-    let canvas = document.getElementById('gameCanvas');
-    let ctx = canvas.getContext('2d');
-    let ballRadius = 10;
-    let x = canvas.width / 2;
-    let y = canvas.height - 30;
-    let dx = 2;
-    let dy = -2;
-    let paddleHeight = 10;
-    let paddleWidth = 75;
-    let paddleX = (canvas.width - paddleWidth) / 2;
-    let rightPressed = false;
-    let leftPressed = false;
-    let brickRowCount = 3;
-    let brickColumnCount = 5;
-    let brickWidth = 75;
-    let brickHeight = 20;
-    let brickPadding = 10;
-    let brickOffsetTop = 30;
-    let brickOffsetLeft = 30;
-    let score = 0;
-    let lives = 10;
-    let gameLoop; // Store the requestAnimationFrame reference to stop the game
-
-    // Variables to handle Fibonacci sequence
-    let fibPrev = 0; // First number in the Fibonacci sequence
-    let fibCurrent = 1; // Second number in the Fibonacci sequence
-
-    // Paddle control
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
-
-    function keyDownHandler(e) {
-        if (e.key == "Right" || e.key == "ArrowRight") {
-            rightPressed = true;
-        } else if (e.key == "Left" || e.key == "ArrowLeft") {
-            leftPressed = true;
-        }
-    }
-
-    function keyUpHandler(e) {
-        if (e.key == "Right" || e.key == "ArrowRight") {
-            rightPressed = false;
-        } else if (e.key == "Left" || e.key == "ArrowLeft") {
-            leftPressed = false;
-        }
-    }
-
-    // Bricks
-    let bricks = [];
-    for (let c = 0; c < brickColumnCount; c++) {
-        bricks[c] = [];
-        for (let r = 0; r < brickRowCount; r++) {
-            bricks[c][r] = { x: 0, y: 0, status: 1 };
-        }
-    }
-
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#ff00ff"; // Neon Magenta ball
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function drawPaddle() {
-        ctx.beginPath();
-        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#00ffff"; // Neon Cyan paddle
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function drawBricks() {
-        for (let c = 0; c < brickColumnCount; c++) {
-            for (let r = 0; r < brickRowCount; r++) {
-                if (bricks[c][r].status == 1) {
-                    let brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
-                    let brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
-                    bricks[c][r].x = brickX;
-                    bricks[c][r].y = brickY;
-                    ctx.beginPath();
-                    ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                    ctx.fillStyle = "#9900cc"; // Neon Purple bricks
-                    ctx.fill();
-                    ctx.closePath();
-                }
-            }
-        }
-    }
-
-    function drawScore() {
-        ctx.font = "16px Arial";
-        ctx.fillStyle = "#00ff00"; // Neon Green score
-        ctx.fillText("Score: " + score, 8, 20);
-    }
-
-    function drawLives() {
-        ctx.font = "16px Arial";
-        ctx.fillStyle = "#ffff00"; // Neon Yellow lives
-        ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
-    }
-
-    // Collision detection
-    function collisionDetection() {
-        for (let c = 0; c < brickColumnCount; c++) {
-            for (let r = 0; r < brickRowCount; r++) {
-                let b = bricks[c][r];
-                if (b.status == 1) {
-                    if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
-                        dy = -dy;
-                        b.status = 0;
-
-                        // Update the score using Fibonacci sequence
-                        let newScore = fibPrev + fibCurrent; // Fibonacci calculation
-                        fibPrev = fibCurrent;
-                        fibCurrent = newScore;
-                        score = newScore;
-
-                        // Check if all bricks are eliminated
-                        if (checkWin()) {
-                            stopGameWithWinMessage("Congrats! Did you get the score sequence?");
-                            return; // Exit the function after winning
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // Check if all bricks are destroyed
-    function checkWin() {
-        for (let c = 0; c < brickColumnCount; c++) {
-            for (let r = 0; r < brickRowCount; r++) {
-                if (bricks[c][r].status == 1) {
-                    return false; // There's still at least one brick
-                }
-            }
-        }
-        return true; // All bricks are destroyed
-    }
-
-    // Stop the game and display the win or game over message
-    function stopGameWithWinMessage(message) {
-        cancelAnimationFrame(gameLoop); // Stop the game loop
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the game field
-        ctx.font = "24px Arial";
-        ctx.fillStyle = "#ff00ff"; // Neon Magenta text
-        ctx.textAlign = "center";
-        ctx.fillText(message, canvas.width / 2, canvas.height / 2);
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBricks();
-        drawBall();
-        drawPaddle();
-        drawScore();
-        drawLives();
-        collisionDetection();
-
-        // Ball movement and screen bounds check
-        if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-            dx = -dx;
-        }
-        if (y + dy < ballRadius) {
-            dy = -dy;
-        } else if (y + dy > canvas.height - ballRadius) {
-            // Ball hits the paddle
-            if (x > paddleX && x < paddleX + paddleWidth) {
-                dy = -dy;
-
-                // Add a small randomness to the reflection to prevent repetitive patterns
-                dx += (Math.random() * 0.5) - 0.25; // Add small randomness to dx
-
-                // Reflect based on paddle movement direction
-                if (rightPressed) {
-                    dx += 0.5; // If paddle is moving right, push ball right
-                } else if (leftPressed) {
-                    dx -= 0.5; // If paddle is moving left, push ball left
-                }
-                if(score >= 987)
-                {
-                  stopGameWithWinMessage("Did you get score sequence?");
-                  return; // Exit the function after winning
-                }
-            } else {
-                lives--;
-                if (!lives) {
-                    stopGameWithWinMessage("GAME OVER");
-                    return; // Exit the function after game over
-                } 
-                else {
-                    x = canvas.width / 2;
-                    y = canvas.height - 30;
-                    dx = 2;
-                    dy = -2;
-                    paddleX = (canvas.width - paddleWidth) / 2;
-                }
-            }
-        }
-
-        // Paddle movement
-        if (rightPressed && paddleX < canvas.width - paddleWidth) {
-            paddleX += 7;
-        } else if (leftPressed && paddleX > 0) {
-            paddleX -= 7;
-        }
-
-        x += dx;
-        y += dy;
-        gameLoop = requestAnimationFrame(draw); // Reference for stopping the game
-    }
-
-    draw();
-</script>
-
-
-
+    <!-- Mobile Nav Toggle Script -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications &amp; Preprints | Aliaksandr Hubin</title>
+    <meta name="description" content="Complete research publications, journal articles, conference papers, and software toolboxes by Aliaksandr Hubin in Bayesian statistics and machine learning.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <span class="brand-name">Aliaksandr Hubin</span>
+                <span class="brand-title">NMBU &amp; University of Oslo</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">About</a></li>
+                    <li><a href="publications.html" class="nav-link active">Publications</a></li>
+                    <li><a href="talks.html" class="nav-link">Talks</a></li>
+                    <li><a href="teaching.html" class="nav-link">Teaching &amp; Mentoring</a></li>
+                    <li><a href="software.html" class="nav-link">Software</a></li>
+                    <li><a href="service.html" class="nav-link">Service</a></li>
+                    <li><a href="CV_Aliaksandr_Hubin.pdf" class="nav-link-cv" target="_blank" rel="noopener">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        CV (PDF)
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+
+            <div class="section-header" style="align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h1 style="font-size: 2.1rem; margin-bottom: 0.35rem;">Publications &amp; Preprints</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Peer-reviewed journal articles, conference proceedings, book chapters, and software papers. Verified via <a href="https://scholar.google.com/citations?user=Lx-G8ckAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>, <a href="https://nva.sikt.no/research-profile/618922" target="_blank" rel="noopener">NVA / Cristin</a>, and academic CV.
+                    </p>
+                </div>
+                <div>
+                    <a href="CV_Aliaksandr_Hubin.pdf" class="btn-cv" target="_blank" style="margin-top:0;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
+                        Download Full CV (PDF)
+                    </a>
+                </div>
+            </div>
+
+            <!-- Filter and Search Bar -->
+            <div class="filter-bar">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="pubSearch" class="search-input" placeholder="Search by title, co-author, topic, or journal...">
+                </div>
+                <div class="filter-pills" id="filterPills">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="journal">Journal Articles</button>
+                    <button class="filter-pill" data-filter="conf">Conference &amp; Chapters</button>
+                    <button class="filter-pill" data-filter="software">Software Papers</button>
+                    <button class="filter-pill" data-filter="preprint">Preprints</button>
+                </div>
+            </div>
+
+            <!-- Publications Container -->
+            <div id="publicationsContainer">
+
+                <!-- 2026 -->
+                <div class="year-group" data-year="2026">
+                    <h2 class="year-heading">2026</h2>
+                    <div class="pub-list">
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Explainable Bayesian Deep Learning through Input-skip Latent Binary Bayesian Neural Networks</h3>
+                            <div class="pub-authors">Eirik Høyheim, Lars Skaaret-Lund, Solve Sæbø, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Journal of Artificial Intelligence Research (JAIR), Vol. 83, pp. 1–42.</div>
+                            <div class="pub-links">
+                                <a href="https://www.jair.org/index.php/jair/article/view/20433/27320" class="btn-pill primary" target="_blank" rel="noopener">JAIR Official Article</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-hoyheim2026')">BibTeX</button>
+                            </div>
+                            <pre id="bib-hoyheim2026" class="bibtex-drawer">@article{hoyheim2026explainable,
+  title={Explainable Bayesian Deep Learning through Input-skip Latent Binary Bayesian Neural Networks},
+  author={H{\o}yheim, Eirik and Skaaret-Lund, Lars and S{\ae}b{\o}, Solve and Hubin, Aliaksandr},
+  journal={Journal of Artificial Intelligence Research},
+  volume={83},
+  pages={1--42},
+  year={2026},
+  url={https://www.jair.org/index.php/jair/article/view/20433/27320}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal software">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-type-badge badge-software">Software</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">FBMS: An R package for flexible Bayesian model selection and averaging with nonlinear models</h3>
+                            <div class="pub-authors">Florian Frommlet, Jon Lachmann, Geir Olve Storvik, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Journal of Computational Science, Elsevier, 102947. DOI: 10.1016/j.jocs.2026.102947</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.jocs.2026.102947" class="btn-pill primary" target="_blank" rel="noopener">Journal Article (Elsevier)</a>
+                                <a href="https://cran.r-project.org/package=FBMS" class="btn-pill" target="_blank" rel="noopener">CRAN Package</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-fbms2026')">BibTeX</button>
+                            </div>
+                            <pre id="bib-fbms2026" class="bibtex-drawer">@article{frommlet2026fbms,
+  title={FBMS: An R package for flexible Bayesian model selection and averaging with nonlinear models},
+  author={Frommlet, Florian and Lachmann, Jon and Storvik, Geir Olve and Hubin, Aliaksandr},
+  journal={Journal of Computational Science},
+  pages={102947},
+  year={2026},
+  doi={10.1016/j.jocs.2026.102947}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal software">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-type-badge badge-software">Software</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">LBBNN: An R Package for Sparse and Explainable Bayesian Deep Learning with Latent Binary Bayesian Neural Networks</h3>
+                            <div class="pub-authors">Lars Skaaret-Lund, Eirik Høyheim, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">The R Journal, 18(3), RJ-2026-048.</div>
+                            <div class="pub-links">
+                                <a href="https://journal.r-project.org/articles/RJ-2026-048/RJ-2026-048.pdf" class="btn-pill primary" target="_blank" rel="noopener">R Journal Article (PDF)</a>
+                                <a href="https://cran.r-project.org/package=LBBNN" class="btn-pill" target="_blank" rel="noopener">CRAN Package</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-lbbnn2026')">BibTeX</button>
+                            </div>
+                            <pre id="bib-lbbnn2026" class="bibtex-drawer">@article{skaaretlund2026lbbnn,
+  title={LBBNN: An R Package for Sparse and Explainable Bayesian Deep Learning with Latent Binary Bayesian Neural Networks},
+  author={Skaaret-Lund, Lars and H{\o}yheim, Eirik and Hubin, Aliaksandr},
+  journal={The R Journal},
+  volume={18},
+  number={3},
+  pages={RJ-2026-048},
+  year={2026}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">The Role of Voice and Silence Behaviors in Software Development: A Structural Equation Modeling Analysis</h3>
+                            <div class="pub-authors">Mary Sánchez-Gordón, Ricardo Colomo-Palacios, Alexander S. Gordon, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Information and Software Technology, Elsevier, 107972. DOI: 10.1016/j.infsof.2026.107972</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.infsof.2026.107972" class="btn-pill primary" target="_blank" rel="noopener">ScienceDirect Article</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-sanchez2026voice')">BibTeX</button>
+                            </div>
+                            <pre id="bib-sanchez2026voice" class="bibtex-drawer">@article{sanchez2026voice,
+  title={The Role of Voice and Silence Behaviors in Software Development: A Structural Equation Modeling Analysis},
+  author={S{\'a}nchez-Gord{\'o}n, Mary and Colomo-Palacios, Ricardo and Gordon, Alexander S and Hubin, Aliaksandr},
+  journal={Information and Software Technology},
+  pages={107972},
+  year={2026},
+  doi={10.1016/j.infsof.2026.107972}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Association between Regional Labour Analgesia and Neonatal Heart Rate Immediately after Birth</h3>
+                            <div class="pub-authors">L. N. Kvenshagen, H. N. Kvenshagen, K. Holte, A. Flem Jacobsen, K. Størdal, <span class="author-hubin">Aliaksandr Hubin</span>, A. L. Solevåg</div>
+                            <div class="pub-venue">Neonatology, Karger Publishers.</div>
+                            <div class="pub-links">
+                                <a href="https://karger.com/neo" class="btn-pill primary" target="_blank" rel="noopener">Neonatology Journal</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Machine learning for detection of subclinical mastitis: A Bayesian approach incorporating diagnostic test properties</h3>
+                            <div class="pub-authors">C. Olofsson, <span class="author-hubin">Aliaksandr Hubin</span>, H. Vinje, A. Rachah, O. Reksen, C. Kielland, I. Toftaker</div>
+                            <div class="pub-venue">Preventive Veterinary Medicine, Elsevier, 106791. DOI: 10.1016/j.prevetmed.2026.106791</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.prevetmed.2026.106791" class="btn-pill primary" target="_blank" rel="noopener">ScienceDirect Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Nurses’ subjective workload assessed with the NASA-TLX and its relationship with the nursing activities score (NAS) and nurses’ demographic factors: a prospective cross-sectional study</h3>
+                            <div class="pub-authors">A. M. Hasselgård, H. T. Larsen, A. C. Melby, S. Vullum, S. Flatland, K. A. Imsland, ... <span class="author-hubin">Aliaksandr Hubin</span>, et al.</div>
+                            <div class="pub-venue">Intensive and Critical Care Nursing, Elsevier, 95: 104428. DOI: 10.1016/j.iccn.2026.104428</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.iccn.2026.104428" class="btn-pill primary" target="_blank" rel="noopener">ScienceDirect Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Estimating the marginal likelihood with Integrated nested Laplace approximation (INLA)</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik</div>
+                            <div class="pub-venue">Journal of Reproducible Statistics. DOI: 10.68365/jrepstat.2026.9</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.68365/jrepstat.2026.9" class="btn-pill primary" target="_blank" rel="noopener">Journal Article</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-inla2026')">BibTeX</button>
+                            </div>
+                            <pre id="bib-inla2026" class="bibtex-drawer">@article{hubin2026estimating,
+  title={Estimating the marginal likelihood with Integrated nested Laplace approximation (INLA)},
+  author={Hubin, Aliaksandr and Storvik, Geir Olve},
+  journal={Journal of Reproducible Statistics},
+  year={2026},
+  doi={10.68365/jrepstat.2026.9}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Conference Proceeding</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Demystifying Knowledge Hiding in Software Testing: Insights from Practitioners</h3>
+                            <div class="pub-authors">Mary Sánchez-Gordón, Ricardo Colomo-Palacios, Kiev Gama, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Proceedings of the IEEE/ACM 48th International Conference on Software Engineering: Software Engineering in Society (ICSE-SEIS 2026). DOI: 10.1145/3786581.3786937</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1145/3786581.3786937" class="btn-pill primary" target="_blank" rel="noopener">ACM Digital Library</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-sanchez2026')">BibTeX</button>
+                            </div>
+                            <pre id="bib-sanchez2026" class="bibtex-drawer">@inproceedings{sanchez2026demystifying,
+  title={Demystifying Knowledge Hiding in Software Testing: Insights from Practitioners},
+  author={S{\'a}nchez-Gord{\'o}n, Mary and Colomo-Palacios, Ricardo and Gama, Kiev and Hubin, Aliaksandr},
+  booktitle={IEEE/ACM International Conference on Software Engineering: Software Engineering in Society (ICSE-SEIS)},
+  year={2026},
+  doi={10.1145/3786581.3786937}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-book">Book &amp; Proceedings</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Proceedings of the 40th International Workshop on Statistical Modelling (IWSM 2026)</h3>
+                            <div class="pub-authors">Riccardo De Bin, Clara Bertinelli Salucci, <span class="author-hubin">Aliaksandr Hubin</span> (Eds.)</div>
+                            <div class="pub-venue">International Workshop on Statistical Modelling, Oslo, Norway. ISBN: 9788255325000.</div>
+                            <div class="pub-links">
+                                <a href="https://www.mn.uio.no/math/english/research/groups/statistics-data-science/events/conferences/iwsm2026/proceedings/proceedings_iwsm2026_proofonline.pdf" class="btn-pill primary" target="_blank" rel="noopener">Proceedings Volume (PDF)</a>
+                                <a href="https://www.mn.uio.no/math/english/research/groups/statistics-data-science/events/conferences/iwsm2026" class="btn-pill" target="_blank" rel="noopener">IWSM 2026 Site</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Bayesian Fractional Polynomials for Optimal Dosage Estimation with Fish Nutrition Applications</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Åshild Krogdahl, Guro Løkka, Trond M. Kortner</div>
+                            <div class="pub-venue">Proceedings of the 40th International Workshop on Statistical Modelling (IWSM 2026), 1(1): 301–306.</div>
+                            <div class="pub-links">
+                                <a href="https://www.mn.uio.no/math/english/research/groups/statistics-data-science/events/conferences/iwsm2026/proceedings/proceedings_iwsm2026_proofonline.pdf" class="btn-pill primary" target="_blank" rel="noopener">Paper in Proceedings</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">BGET: Bayesian Genetic Ensemble of Trees</h3>
+                            <div class="pub-authors">Sigurd Myhre Vittersø, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Proceedings of the 40th International Workshop on Statistical Modelling (IWSM 2026), 1: 592–595.</div>
+                            <div class="pub-links">
+                                <a href="https://www.mn.uio.no/math/english/research/groups/statistics-data-science/events/conferences/iwsm2026/proceedings/proceedings_iwsm2026_proofonline.pdf" class="btn-pill primary" target="_blank" rel="noopener">Paper in Proceedings</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-book">Book Contribution</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Handbook of Bayesian Deep Learning</h3>
+                            <div class="pub-authors">C. Agostinelli, L. Aitchison, E. Aldea, R. Allmendinger, S. Ament, ... <span class="author-hubin">Aliaksandr Hubin</span>, et al.</div>
+                            <div class="pub-venue">Comprehensive Reference Handbook on Bayesian Deep Learning.</div>
+                        </article>
+
+                        <article class="pub-card" data-category="preprint">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-preprint">Preprint</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Optimal Connectivity of Random Boolean Networks for Reservoir Computing</h3>
+                            <div class="pub-authors">C. M. S. Vibe, <span class="author-hubin">Aliaksandr Hubin</span>, S. Nichele</div>
+                            <div class="pub-venue">arXiv preprint arXiv:2610.33498.</div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2610.33498" class="btn-pill primary" target="_blank" rel="noopener">arXiv:2610.33498</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="preprint">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-preprint">Preprint</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Benchmarking the Connectomes of Caenorhabditis elegans within the Reservoir Computing Framework</h3>
+                            <div class="pub-authors">F. S. Reimers, O. H. Ramstad, <span class="author-hubin">Aliaksandr Hubin</span>, S. Nichele</div>
+                            <div class="pub-venue">arXiv preprint arXiv:2609.30508.</div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2609.30508" class="btn-pill primary" target="_blank" rel="noopener">arXiv:2609.30508</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="preprint">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-preprint">Preprint</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Exploring napping paradigm for Recurrent Spiking Neural Networks</h3>
+                            <div class="pub-authors">Andreas Massey, Stefano Nichele, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">arXiv preprint arXiv:2609.13927.</div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2609.13927" class="btn-pill primary" target="_blank" rel="noopener">arXiv:2609.13927</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="preprint">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-preprint">Preprint</span>
+                                <span class="pub-year">2026</span>
+                            </div>
+                            <h3 class="pub-title">Sleep-Based Homeostatic Regularization for Stabilizing Spike-Timing-Dependent Plasticity in Recurrent Spiking Neural Networks</h3>
+                            <div class="pub-authors">Andreas Massey, <span class="author-hubin">Aliaksandr Hubin</span>, Stefano Nichele, Solve Sæbø</div>
+                            <div class="pub-venue">arXiv preprint arXiv:2601.08447.</div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2601.08447" class="btn-pill primary" target="_blank" rel="noopener">arXiv:2601.08447</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="year-group" data-year="2025">
+                    <h2 class="year-heading">2025</h2>
+                    <div class="pub-list">
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2025</span>
+                            </div>
+                            <h3 class="pub-title">Safety of Heavy Resistance Exercise During Pregnancy and Postpartum: A Controlled, Prospective Cohort Study</h3>
+                            <div class="pub-authors">Therese Fostervold Mathisen, <span class="author-hubin">Aliaksandr Hubin</span>, Margo Mountjoy, Jorunn Sundgot-Borgen</div>
+                            <div class="pub-venue">Women in Sport &amp; Physical Activity Journal, Human Kinetics. DOI: 10.1123/wspaj.2025-0010</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1123/wspaj.2025-0010" class="btn-pill primary" target="_blank" rel="noopener">Journal Article (Human Kinetics)</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-mathisen2025')">BibTeX</button>
+                            </div>
+                            <pre id="bib-mathisen2025" class="bibtex-drawer">@article{mathisen2025safety,
+  title={Safety of Heavy Resistance Exercise During Pregnancy and Postpartum: A Controlled, Prospective Cohort Study},
+  author={Mathisen, Therese Fostervold and Hubin, Aliaksandr and Mountjoy, Margo and Sundgot-Borgen, Jorunn},
+  journal={Women in Sport \& Physical Activity Journal},
+  year={2025},
+  doi={10.1123/wspaj.2025-0010}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2025</span>
+                            </div>
+                            <h3 class="pub-title">The effect of exercise-based rehabilitation on objective physical activity levels in patients with persistent dyspnoea following pulmonary embolism</h3>
+                            <div class="pub-authors">S. Haukeland-Parker, Ø. Jervan, W. Ghanima, M. A. Spruit, <span class="author-hubin">Aliaksandr Hubin</span>, M. Tavoly, et al.</div>
+                            <div class="pub-venue">Thrombosis Research, Elsevier, 252: 109362. DOI: 10.1016/j.thromres.2025.109362</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.thromres.2025.109362" class="btn-pill primary" target="_blank" rel="noopener">ScienceDirect Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2025</span>
+                            </div>
+                            <h3 class="pub-title">External validation of the DAYS score for suspected deep vein thrombosis</h3>
+                            <div class="pub-authors">T. D. Halstensen, C. Hardeland, W. Ghanima, V. A. Grøndahl, <span class="author-hubin">Aliaksandr Hubin</span>, et al.</div>
+                            <div class="pub-venue">Research and Practice in Thrombosis and Haemostasis, 9(4): 102885. DOI: 10.1016/j.rpth.2025.102885</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.rpth.2025.102885" class="btn-pill primary" target="_blank" rel="noopener">RPTH Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2025</span>
+                            </div>
+                            <h3 class="pub-title">The effect of stereotypes on perceived competence of indigenous software practitioners: a study of dress style in professional photos</h3>
+                            <div class="pub-authors">Mary Sánchez-Gordón, Ricardo Colomo-Palacios, C. Guevara-Vega, A. Quiña-Mera, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Empirical Software Engineering, Springer, 30(5): 1–40. DOI: 10.1007/s10664-025-10520-2</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1007/s10664-025-10520-2" class="btn-pill primary" target="_blank" rel="noopener">Springer Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2025</span>
+                            </div>
+                            <h3 class="pub-title">Bayesian Generalized Nonlinear Models Offer Basis Free SINDy With Model Uncertainty</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Proceedings of the 39th International Workshop on Statistical Modelling (IWSM 2025), Limerick, Ireland. ISBN: 9781036927110.</div>
+                            <div class="pub-links">
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-hubin2025sindy')">BibTeX</button>
+                            </div>
+                            <pre id="bib-hubin2025sindy" class="bibtex-drawer">@inproceedings{hubin2025sindy,
+  title={Bayesian Generalized Nonlinear Models Offer Basis Free SINDy With Model Uncertainty},
+  author={Hubin, Aliaksandr},
+  booktitle={Proceedings of the 39th International Workshop on Statistical Modelling},
+  year={2025},
+  isbn={9781036927110},
+  address={Limerick, Ireland}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2025</span>
+                            </div>
+                            <h3 class="pub-title">Subsampling MCMC for Bayesian Variable Selection and Model Averaging in BGNLM</h3>
+                            <div class="pub-authors">Jon Lachmann, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">23rd European Young Statisticians Meeting Proceedings, Ljubljana, Slovenia.</div>
+                            <div class="pub-links">
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-lachmann2025')">BibTeX</button>
+                            </div>
+                            <pre id="bib-lachmann2025" class="bibtex-drawer">@inproceedings{lachmann2025subsampling,
+  title={Subsampling MCMC for Bayesian Variable Selection and Model Averaging in BGNLM},
+  author={Lachmann, Jon and Hubin, Aliaksandr},
+  booktitle={23rd European Young Statisticians Meeting Proceedings},
+  year={2025},
+  address={Ljubljana, Slovenia}
+}</pre>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="year-group" data-year="2024">
+                    <h2 class="year-heading">2024</h2>
+                    <div class="pub-list">
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Sparsifying Bayesian neural networks with latent binary variables and normalizing flows</h3>
+                            <div class="pub-authors">Lars Skaaret-Lund, Geir Olve Storvik, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Transactions on Machine Learning Research (TMLR), ISSN 2835-8856, pp. 1–32.</div>
+                            <div class="pub-links">
+                                <a href="https://openreview.net/forum?id=d6kqUKzG3V" class="btn-pill primary" target="_blank" rel="noopener">OpenReview Published Paper</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-skaaret2024tmlr')">BibTeX</button>
+                            </div>
+                            <pre id="bib-skaaret2024tmlr" class="bibtex-drawer">@article{skaaret2024sparsifying,
+  title={Sparsifying Bayesian neural networks with latent binary variables and normalizing flows},
+  author={Skaaret-Lund, Lars and Storvik, Geir Olve and Hubin, Aliaksandr},
+  journal={Transactions on Machine Learning Research},
+  pages={1--32},
+  year={2024},
+  url={https://openreview.net/forum?id=d6kqUKzG3V}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">ICML 2024 (PMLR)</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Position: Bayesian Deep Learning is Needed in the Age of Large-Scale AI</h3>
+                            <div class="pub-authors">Theodore Papamarkou, Maria Skoularidou, Konstantina Palla, Laurence Aitchison, Julyan Arbel, David Dunson, ... <span class="author-hubin">Aliaksandr Hubin</span>, et al. [25 authors]</div>
+                            <div class="pub-venue">Proceedings of the 41st International Conference on Machine Learning (ICML 2024), PMLR 235: 39556–39586.</div>
+                            <div class="pub-links">
+                                <a href="https://proceedings.mlr.press/v235/papamarkou24b.html" class="btn-pill primary" target="_blank" rel="noopener">PMLR Published Paper</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-papamarkou2024')">BibTeX</button>
+                            </div>
+                            <pre id="bib-papamarkou2024" class="bibtex-drawer">@inproceedings{papamarkou2024position,
+  title={Position: Bayesian Deep Learning is Needed in the Age of Large-Scale AI},
+  author={Papamarkou, Theodore and Skoularidou, Maria and Palla, Konstantina and Aitchison, Laurence and Arbel, Julyan and Dunson, David and Hubin, Aliaksandr and others},
+  booktitle={International Conference on Machine Learning},
+  pages={39556--39586},
+  year={2024},
+  organization={PMLR}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">ICML 2024 (PMLR)</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Incorporating probabilistic domain knowledge into deep multiple instance learning</h3>
+                            <div class="pub-authors">Ghadi al Hajj, <span class="author-hubin">Aliaksandr Hubin</span>, Chakravarthi Kanduri, Milena Pavlovic, Knut Dagestad Rand, Michael Widrich, et al.</div>
+                            <div class="pub-venue">Proceedings of the 41st International Conference on Machine Learning (ICML 2024), PMLR 235: 17279–17297.</div>
+                            <div class="pub-links">
+                                <a href="https://proceedings.mlr.press/v235/hajj24a.html" class="btn-pill primary" target="_blank" rel="noopener">PMLR Published Paper</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-alhajj2024')">BibTeX</button>
+                            </div>
+                            <pre id="bib-alhajj2024" class="bibtex-drawer">@inproceedings{alhajj2024incorporating,
+  title={Incorporating probabilistic domain knowledge into deep multiple instance learning},
+  author={al Hajj, Ghadi and Hubin, Aliaksandr and Kanduri, Chakravarthi and Pavlovic, Milena and Rand, Knut Dagestad and Widrich, Michael and others},
+  booktitle={International Conference on Machine Learning},
+  pages={17279--17297},
+  year={2024},
+  organization={PMLR}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Evolutionary variational inference for Bayesian generalized nonlinear models</h3>
+                            <div class="pub-authors">Philip Sebastian Hauglie Sommerfelt, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Neural Computing &amp; Applications, Springer, 36(33): 21023–21040. DOI: 10.1007/s00521-024-10349-1</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1007/s00521-024-10349-1" class="btn-pill primary" target="_blank" rel="noopener">Springer Journal Article</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-sommerfelt2024')">BibTeX</button>
+                            </div>
+                            <pre id="bib-sommerfelt2024" class="bibtex-drawer">@article{sommerfelt2024evolutionary,
+  title={Evolutionary variational inference for Bayesian generalized nonlinear models},
+  author={Sommerfelt, Philip Sebastian Hauglie and Hubin, Aliaksandr},
+  journal={Neural Computing and Applications},
+  volume={36},
+  number={33},
+  pages={21023--21040},
+  year={2024},
+  doi={10.1007/s00521-024-10349-1}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Outlier Detection in Bayesian Neural Networks: Exploring Pre-activations and Predictive Entropy</h3>
+                            <div class="pub-authors">Herman Ellingsen, <span class="author-hubin">Aliaksandr Hubin</span>, Filippo Remonato, Solve Sæbø</div>
+                            <div class="pub-venue">Nordic Machine Intelligence (NMI), 4(1): 1–15. DOI: 10.5617/nmi.11406</div>
+                            <div class="pub-links">
+                                <a href="https://journals.uio.no/NMI/article/view/11406" class="btn-pill primary" target="_blank" rel="noopener">NMI Official Article</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-ellingsen2024')">BibTeX</button>
+                            </div>
+                            <pre id="bib-ellingsen2024" class="bibtex-drawer">@article{ellingsen2024outlier,
+  title={Outlier Detection in Bayesian Neural Networks: Exploring Pre-activations and Predictive Entropy},
+  author={Ellingsen, Herman and Hubin, Aliaksandr and Remonato, Filippo and S{\ae}b{\o}, Solve},
+  journal={Nordic Machine Intelligence},
+  volume={4},
+  number={1},
+  pages={1--15},
+  year={2024},
+  doi={10.5617/nmi.11406}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Sparse Bayesian Neural Networks: Bridging Model and Parameter Uncertainty through Scalable Variational Inference</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik</div>
+                            <div class="pub-venue">Mathematics, MDPI, 12(6): 788. DOI: 10.3390/math12060788</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.3390/math12060788" class="btn-pill primary" target="_blank" rel="noopener">MDPI Journal Article</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-hubin2024math')">BibTeX</button>
+                            </div>
+                            <pre id="bib-hubin2024math" class="bibtex-drawer">@article{hubin2024sparse,
+  title={Sparse Bayesian Neural Networks: Bridging Model and Parameter Uncertainty through Scalable Variational Inference},
+  author={Hubin, Aliaksandr and Storvik, Geir Olve},
+  journal={Mathematics},
+  volume={12},
+  number={6},
+  pages={788},
+  year={2024},
+  doi={10.3390/math12060788}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Effects of dietary fish to rapeseed oil ratio on steatosis symptoms in Atlantic salmon of different sizes</h3>
+                            <div class="pub-authors">Daphne Siciliani, <span class="author-hubin">Aliaksandr Hubin</span>, Bente Synnøve Ruyter, Elvis M. Chikwati, Vebjørn G. Thunes, Elin C. Valen, et al.</div>
+                            <div class="pub-venue">Scientific Reports, Nature Publishing Group, 14(1): 1–18. DOI: 10.1038/s41598-024-68434-3</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1038/s41598-024-68434-3" class="btn-pill primary" target="_blank" rel="noopener">Nature Scientific Reports</a>
+                                <button class="btn-pill bibtex-toggle" onclick="toggleBibtex('bib-siciliani2024')">BibTeX</button>
+                            </div>
+                            <pre id="bib-siciliani2024" class="bibtex-drawer">@article{siciliani2024effects,
+  title={Effects of dietary fish to rapeseed oil ratio on steatosis symptoms in Atlantic salmon of different sizes},
+  author={Siciliani, Daphne and Hubin, Aliaksandr and Ruyter, Bente Synn{\o}ve and Chikwati, Elvis M and others},
+  journal={Scientific Reports},
+  volume={14},
+  number={1},
+  pages={1--18},
+  year={2024},
+  doi={10.1038/s41598-024-68434-3}
+}</pre>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Motor effects of fentanyl in isoflurane-anaesthetized pigs and the subsequent effect of ketanserin or naloxone</h3>
+                            <div class="pub-authors">Nora Digranes, Emma Hoeberg, Andreas Lervik, <span class="author-hubin">Aliaksandr Hubin</span>, Janicke Nordgreen, Henning Andreas Haga</div>
+                            <div class="pub-venue">Veterinary Anaesthesia and Analgesia, 51(5): 491–499. DOI: 10.1016/j.vaa.2024.07.002</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.vaa.2024.07.002" class="btn-pill primary" target="_blank" rel="noopener">ScienceDirect Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Discussion</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Contributed Discussion of Sparse Bayesian factor analysis when the number of factors is unknown by Frühwirth-Schnatter, Hosszejni, and Lopes</h3>
+                            <div class="pub-authors">William R. P. Denault, <span class="author-hubin">Aliaksandr Hubin</span>, Valeria Vitelli, Sylvia Richardson</div>
+                            <div class="pub-venue">Bayesian Analysis, 19(1): 109–112. DOI: 10.1214/24-BA1423</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1214/24-BA1423" class="btn-pill primary" target="_blank" rel="noopener">Bayesian Analysis Link</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">Development and internal validation of a simple clinical score for the estimation of the probability of deep vein thrombosis in outpatient emergency department patients</h3>
+                            <div class="pub-authors">T. D. Halstensen, C. Hardeland, W. Ghanima, V. A. Grøndahl, <span class="author-hubin">Aliaksandr Hubin</span>, et al.</div>
+                            <div class="pub-venue">Research and Practice in Thrombosis and Haemostasis, 8(8): 102608. DOI: 10.1016/j.rpth.2024.102608</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.rpth.2024.102608" class="btn-pill primary" target="_blank" rel="noopener">RPTH Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="software">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-software">CRAN Package</span>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <h3 class="pub-title">EMJMCMC: Evolutionary Mode Jumping Markov Chain Monte Carlo Expert Toolbox</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Waldir Leoncio, Geir Olve Storvik, Florian Frommlet</div>
+                            <div class="pub-venue">Comprehensive R Archive Network (CRAN), Manual pp. 1–35.</div>
+                            <div class="pub-links">
+                                <a href="https://cran.r-project.org/package=EMJMCMC" class="btn-pill primary" target="_blank" rel="noopener">CRAN Package</a>
+                                <a href="https://cran.r-project.org/web/packages/EMJMCMC/EMJMCMC.pdf" class="btn-pill" target="_blank" rel="noopener">Package Manual (PDF)</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="year-group" data-year="2023">
+                    <h2 class="year-heading">2023</h2>
+                    <div class="pub-list">
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2023</span>
+                            </div>
+                            <h3 class="pub-title">Fractional Polynomial Models as Special Cases of Bayesian Generalized Nonlinear Models</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Georg Heinze, Riccardo De Bin</div>
+                            <div class="pub-venue">Fractal and Fractional, MDPI, 7(9): 641. DOI: 10.3390/fractalfract7090641</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.3390/fractalfract7090641" class="btn-pill primary" target="_blank" rel="noopener">MDPI Journal Article</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="year-group" data-year="2022">
+                    <h2 class="year-heading">2022</h2>
+                    <div class="pub-list">
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2022</span>
+                            </div>
+                            <h3 class="pub-title">A subsampling approach for Bayesian model selection</h3>
+                            <div class="pub-authors">Jon Lachmann, Geir Olve Storvik, Florian Frommlet, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">International Journal of Approximate Reasoning (IJAR), Elsevier, 151: 33–63. DOI: 10.1016/j.ijar.2022.08.018</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.ijar.2022.08.018" class="btn-pill primary" target="_blank" rel="noopener">ScienceDirect Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2022</span>
+                            </div>
+                            <h3 class="pub-title">Prior distributions expressing ignorance about convex increasing failure rates</h3>
+                            <div class="pub-authors">Jørund Inge Gåsemyr, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Scandinavian Journal of Statistics (SJS), Wiley. DOI: 10.1111/sjos.12588</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1111/sjos.12588" class="btn-pill primary" target="_blank" rel="noopener">Wiley Online Library</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2022</span>
+                            </div>
+                            <h3 class="pub-title">On a genetically modified mode jumping MCMC approach for multivariate fractional polynomials</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Riccardo De Bin</div>
+                            <div class="pub-venue">Proceedings of the 36th International Workshop on Statistical Modelling (IWSM 2022), EUT, pp. 478–483. ISBN: 978-88-5511-309-0</div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="year-group" data-year="2021">
+                    <h2 class="year-heading">2021</h2>
+                    <div class="pub-list">
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2021</span>
+                            </div>
+                            <h3 class="pub-title">Flexible Bayesian Nonlinear Model Configuration</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Storvik, Florian Frommlet</div>
+                            <div class="pub-venue">The Journal of Artificial Intelligence Research (JAIR), 72: 901–942. DOI: 10.1613/JAIR.1.13047</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1613/JAIR.1.13047" class="btn-pill primary" target="_blank" rel="noopener">JAIR Official Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf software">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">ACL-IJCNLP 2021</span>
+                                <span class="pub-type-badge badge-software">Software</span>
+                                <span class="pub-year">2021</span>
+                            </div>
+                            <h3 class="pub-title">skweak: Weak Supervision Made Easy for NLP</h3>
+                            <div class="pub-authors">Pierre Lison, Jeremy Barnes, <span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics (ACL-IJCNLP 2021 System Demonstrations), pp. 337–346. DOI: 10.18653/v1/2021.acl-demo.40</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.18653/v1/2021.acl-demo.40" class="btn-pill primary" target="_blank" rel="noopener">ACL Anthology</a>
+                                <a href="https://spacy.io/universe/project/skweak" class="btn-pill" target="_blank" rel="noopener">spaCy Universe</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2021</span>
+                            </div>
+                            <h3 class="pub-title">Reversible genetically modified mode jumping MCMC</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Florian Frommlet, Geir Olve Storvik</div>
+                            <div class="pub-venue">22nd European Young Statisticians Meeting – Proceedings, Panteion University Press, pp. 35–40. ISBN: 978-960-7943-23-1</div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- 2020 & Earlier -->
+                <div class="year-group" data-year="2020-earlier">
+                    <h2 class="year-heading">2020 &amp; Earlier</h2>
+                    <div class="pub-list">
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">ACL 2020</span>
+                                <span class="pub-year">2020</span>
+                            </div>
+                            <h3 class="pub-title">Named Entity Recognition without Labelled Data: A Weak Supervision Approach</h3>
+                            <div class="pub-authors">Pierre Lison, Jeremy Barnes, <span class="author-hubin">Aliaksandr Hubin</span>, Samia Touileb</div>
+                            <div class="pub-venue">Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (ACL 2020), pp. 1518–1533.</div>
+                            <div class="pub-links">
+                                <a href="https://aclanthology.org/2020.acl-main.139/" class="btn-pill primary" target="_blank" rel="noopener">ACL Anthology</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2020</span>
+                            </div>
+                            <h3 class="pub-title">A Bayesian binomial regression model with latent gaussian processes for modelling DNA methylation</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik, Paul Eivind Grini, Melinka Alonso Butenko</div>
+                            <div class="pub-venue">Austrian Journal of Statistics, 49(4): 46–56. DOI: 10.17713/ajs.v49i4.1124</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.17713/ajs.v49i4.1124" class="btn-pill primary" target="_blank" rel="noopener">Journal Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Rejoinder</span>
+                                <span class="pub-year">2020</span>
+                            </div>
+                            <h3 class="pub-title">Rejoinder for the discussion of the paper "A Novel Algorithmic Approach to Bayesian Logic Regression"</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik, Florian Frommlet</div>
+                            <div class="pub-venue">Bayesian Analysis, International Society for Bayesian Analysis, 15(1): 312–333. DOI: 10.1214/18-BA1141REJ</div>
+                            <div class="pub-links">
+                                <a href="https://projecteuclid.org/journals/bayesian-analysis/volume-15/issue-1/Rejoinder-for-the-discussion-of-the-paper-A-Novel/10.1214/18-BA1141REJ.full" class="btn-pill primary" target="_blank" rel="noopener">Project Euclid Full Text</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2018</span>
+                            </div>
+                            <h3 class="pub-title">A Novel Algorithmic Approach to Bayesian Logic Regression (with Discussion)</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik, Florian Frommlet</div>
+                            <div class="pub-venue">Bayesian Analysis, International Society for Bayesian Analysis, 15(1): 263–311. DOI: 10.1214/18-BA1141</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1214/18-BA1141" class="btn-pill primary" target="_blank" rel="noopener">Project Euclid Full Text</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">Journal Article</span>
+                                <span class="pub-year">2018</span>
+                            </div>
+                            <h3 class="pub-title">Mode jumping MCMC for Bayesian variable selection in GLMM</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik</div>
+                            <div class="pub-venue">Computational Statistics &amp; Data Analysis (CSDA), Elsevier, 127: 281–297. DOI: 10.1016/j.csda.2018.05.020</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1016/j.csda.2018.05.020" class="btn-pill primary" target="_blank" rel="noopener">ScienceDirect Article</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">ACM Proceeding</span>
+                                <span class="pub-year">2019</span>
+                            </div>
+                            <h3 class="pub-title">An adaptive simulated annealing EM algorithm for inference on non-homogeneous hidden Markov models</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">ACM ICPS: AIIPCC '19, pp. 1–9. DOI: 10.1145/3371425.3371641</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1145/3371425.3371641" class="btn-pill primary" target="_blank" rel="noopener">ACM Digital Library</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2019</span>
+                            </div>
+                            <h3 class="pub-title">Bayesian binomial regression model with a latent Gaussian field for analysis of epigenetic data</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik, Paul Eivind Grini, Melinka Alonso Butenko</div>
+                            <div class="pub-venue">CDAM 2019 Proceedings, Belarusian State University Press, pp. 167–171. ISBN: 978-985-566-811-5</div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Book Chapter</span>
+                                <span class="pub-year">2016</span>
+                            </div>
+                            <h3 class="pub-title">On Mode Jumping in MCMC for Bayesian Variable Selection within GLMM</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik</div>
+                            <div class="pub-venue">CDAM 2016 Proceedings, Belarusian State University, pp. 275–278. ISBN: 978-985-553-366-6</div>
+                        </article>
+
+                        <article class="pub-card" data-category="preprint">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-preprint">Technical Report</span>
+                                <span class="pub-year">2019</span>
+                            </div>
+                            <h3 class="pub-title">Combining model and parameter uncertainty in Bayesian neural networks</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik</div>
+                            <div class="pub-venue">arXiv preprint arXiv:1903.07594. DOI: 10.48550/arXiv.1903.07594</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.48550/arXiv.1903.07594" class="btn-pill" target="_blank" rel="noopener">arXiv:1903.07594</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Research Report</span>
+                                <span class="pub-year">2019</span>
+                            </div>
+                            <h3 class="pub-title">FinAI: Scalable techniques to stock price time series modelling</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Kjersti Aas</div>
+                            <div class="pub-venue">Norsk Regnesentral, Report SAMBA/24/19, pp. 1–30.</div>
+                            <div class="pub-links">
+                                <a href="https://nr.no/publikasjon/1755261/" class="btn-pill" target="_blank" rel="noopener">NR Report Page</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="journal">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-journal">PhD Thesis</span>
+                                <span class="pub-year">2018</span>
+                            </div>
+                            <h3 class="pub-title">Bayesian model configuration, selection and averaging in complex regression contexts</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Doctoral Dissertation, Department of Mathematics, Faculty of Mathematics and Natural Sciences, University of Oslo. Series of dissertations No. 2049. ISSN: 1501-7710</div>
+                            <div class="pub-links">
+                                <a href="https://www.duo.uio.no/handle/10852/65345" class="btn-pill primary" target="_blank" rel="noopener">UiO DUO Archive</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="preprint">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-preprint">Technical Report</span>
+                                <span class="pub-year">2016</span>
+                            </div>
+                            <h3 class="pub-title">Efficient mode jumping MCMC for Bayesian variable selection in GLMM</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span>, Geir Olve Storvik</div>
+                            <div class="pub-venue">arXiv preprint arXiv:1604.06398. DOI: 10.48550/arXiv.1604.06398</div>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.48550/arXiv.1604.06398" class="btn-pill" target="_blank" rel="noopener">arXiv:1604.06398</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Master's Thesis</span>
+                                <span class="pub-year">2014</span>
+                            </div>
+                            <h3 class="pub-title">Evaluation of supply vessel schedules robustness with a posteriori improvements</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span></div>
+                            <div class="pub-venue">Master's Thesis in Operations Research, Molde University College. <em>Awarded the NIMA Prize for Best MSc Graduate.</em></div>
+                            <div class="pub-links">
+                                <a href="https://himolde.brage.unit.no/himolde-xmlui/handle/11250/2367761" class="btn-pill" target="_blank" rel="noopener">HiMolde Brage Archive</a>
+                            </div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Conference Paper</span>
+                                <span class="pub-year">2013</span>
+                            </div>
+                            <h3 class="pub-title">Evaluation of the effectiveness of the Black-Litterman model in the presence of heterogeneous investor expectations (Ацэнка эфектыўнасці мадэлі Блэка-Літэрмана пры наяўнасці неаднастайных чаканняў інвестараў)</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span> (А. А. Губін)</div>
+                            <div class="pub-venue">Proceedings of the 70th Scientific Conference of Students and Graduates, Faculty of Applied Mathematics and Computer Science, Belarusian State University. <em>Faculty 1st Research Award.</em></div>
+                        </article>
+
+                        <article class="pub-card" data-category="conf">
+                            <div class="pub-meta-top">
+                                <span class="pub-type-badge badge-conf">Conference Paper</span>
+                                <span class="pub-year">2013</span>
+                            </div>
+                            <h3 class="pub-title">Development of a multifunctional software product for optimal portfolio investment (Распрацоўка шматфункцыянальнага праграмнага прадукту для аптымальнага партфельнага інвеставання)</h3>
+                            <div class="pub-authors"><span class="author-hubin">Aliaksandr Hubin</span> (А. А. Губін)</div>
+                            <div class="pub-venue">Proceedings of the 69th Scientific Conference of Students and Graduates, Faculty of Applied Mathematics and Computer Science, Belarusian State University.</div>
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p>&copy; 2026 Aliaksandr Hubin &bull; Academic Profile</p>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="talks.html">Talks</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="CV_Aliaksandr_Hubin.pdf" target="_blank">CV (PDF)</a></li>
+                <li><a href="game.html" class="easter-egg-link">Break Room 🎮</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Interactive Filter & Search Script -->
+    <script>
+        // Mobile Nav
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+
+        // Toggle BibTeX snippet
+        function toggleBibtex(id) {
+            const drawer = document.getElementById(id);
+            if (drawer) {
+                drawer.classList.toggle('open');
+            }
+        }
+
+        // Search & Category Filtering
+        const searchInput = document.getElementById('pubSearch');
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const pubCards = document.querySelectorAll('.pub-card');
+        const yearGroups = document.querySelectorAll('.year-group');
+
+        let currentFilter = 'all';
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+
+            pubCards.forEach(card => {
+                const category = card.getAttribute('data-category') || '';
+                const text = card.innerText.toLowerCase();
+
+                const matchesFilter = (currentFilter === 'all') || category.includes(currentFilter);
+                const matchesSearch = !query || text.includes(query);
+
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Hide empty year groups
+            yearGroups.forEach(group => {
+                let hasVisible = false;
+                const cards = group.querySelectorAll('.pub-card');
+                cards.forEach(c => {
+                    if (c.style.display !== 'none') hasVisible = true;
+                });
+                group.style.display = hasVisible ? 'block' : 'none';
+            });
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', function() {
+                filterPills.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+    </script>
+</body>
+</html>
