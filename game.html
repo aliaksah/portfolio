@@ -13,18 +13,19 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .game-wrapper {
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto;
             text-align: center;
         }
         canvas {
-            background-color: #0d1b2a;
+            background-color: #0b1329;
             border: 2px solid var(--accent);
             border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             display: block;
             margin: 1.5rem auto;
             max-width: 100%;
+            cursor: pointer;
         }
         .game-instructions {
             background: var(--bg-card);
@@ -34,6 +35,11 @@
             margin-top: 1.5rem;
             font-size: 0.9rem;
             color: var(--text-muted);
+            text-align: left;
+            line-height: 1.6;
+        }
+        .game-instructions strong {
+            color: var(--text-main);
         }
     </style>
 </head>
@@ -57,7 +63,7 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html" class="nav-link">About</a></li>
                     <li><a href="publications.html" class="nav-link">Publications</a></li>
-                    <li><a href="talks.html" class="nav-link">Talks</a></li>
+                    <li><a href="talks.html" class="nav-link">Talks &amp; Posters</a></li>
                     <li><a href="teaching.html" class="nav-link">Teaching &amp; Mentoring</a></li>
                     <li><a href="software.html" class="nav-link">Software</a></li>
                     <li><a href="service.html" class="nav-link">Service</a></li>
@@ -74,15 +80,16 @@
         <div class="container">
             <div class="game-wrapper">
                 <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">The Academic Break Room</h1>
-                <p style="color: var(--text-muted);">
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
                     Tired of reviewing papers and checking posteriors? Take a short mathematical break with the Fibonacci Breakout game!
                 </p>
 
                 <canvas id="gameCanvas" width="480" height="380"></canvas>
 
                 <div class="game-instructions">
-                    <p><strong>Controls:</strong> Use the Left (◀) and Right (▶) arrow keys on your keyboard to control the racket.</p>
-                    <p style="margin-bottom: 0;"><strong>Fibonacci Scoring:</strong> Each eliminated brick scores the next number in the Fibonacci sequence! Reach 987 to win.</p>
+                    <p><strong>🎮 Controls:</strong> Use <strong>Left (◀) / Right (▶) Arrow keys</strong> or <strong>A / D keys</strong>, or simply <strong>move your mouse / finger</strong> across the board to steer the paddle.</p>
+                    <p><strong>🚀 Launch:</strong> Press <strong>Spacebar</strong> or <strong>Click / Tap the canvas</strong> to launch the ball or restart after Game Over.</p>
+                    <p style="margin-bottom: 0;"><strong>🔢 Fibonacci Scoring:</strong> Each eliminated brick scores the next number in the Fibonacci sequence (1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, ...)! Clear all 18 bricks to achieve Victory.</p>
                 </div>
             </div>
         </div>
@@ -97,7 +104,7 @@
             <ul class="footer-nav">
                 <li><a href="index.html">About</a></li>
                 <li><a href="publications.html">Publications</a></li>
-                <li><a href="talks.html">Talks</a></li>
+                <li><a href="talks.html">Talks &amp; Posters</a></li>
                 <li><a href="teaching.html">Teaching</a></li>
                 <li><a href="software.html">Software</a></li>
                 <li><a href="service.html">Service</a></li>
@@ -112,82 +119,177 @@
             document.getElementById('navMenu').classList.toggle('open');
         });
 
-        // Game Logic
-        let canvas = document.getElementById('gameCanvas');
-        let ctx = canvas.getContext('2d');
-        let ballRadius = 8;
-        let x = canvas.width / 2;
-        let y = canvas.height - 35;
-        let dx = 2.5;
-        let dy = -2.5;
-        let paddleHeight = 10;
-        let paddleWidth = 85;
+        // Game Constants and Setup
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const ballRadius = 7;
+        const paddleHeight = 10;
+        const paddleWidth = 80;
+        const paddleY = canvas.height - 22;
+
+        const brickRowCount = 3;
+        const brickColumnCount = 6;
+        const brickWidth = 64;
+        const brickHeight = 16;
+        const brickPadding = 10;
+        const brickOffsetTop = 50;
+        const brickOffsetLeft = 23;
+
+        const baseSpeed = 4.0;
+
+        // State Machine: 'READY', 'PLAYING', 'GAMEOVER', 'VICTORY'
+        let gameState = 'READY';
+
         let paddleX = (canvas.width - paddleWidth) / 2;
+        let x = canvas.width / 2;
+        let y = paddleY - ballRadius;
+        let dx = 2.4;
+        let dy = -3.2;
+
         let rightPressed = false;
         let leftPressed = false;
-        let brickRowCount = 3;
-        let brickColumnCount = 5;
-        let brickWidth = 76;
-        let brickHeight = 18;
-        let brickPadding = 12;
-        let brickOffsetTop = 40;
-        let brickOffsetLeft = 26;
+
         let score = 0;
-        let lives = 5;
-        let gameLoop;
+        let lives = 3;
 
-        let fibPrev = 0;
-        let fibCurrent = 1;
-
-        document.addEventListener("keydown", keyDownHandler, false);
-        document.addEventListener("keyup", keyUpHandler, false);
-
-        function keyDownHandler(e) {
-            if (e.key == "Right" || e.key == "ArrowRight") rightPressed = true;
-            else if (e.key == "Left" || e.key == "ArrowLeft") leftPressed = true;
-        }
-
-        function keyUpHandler(e) {
-            if (e.key == "Right" || e.key == "ArrowRight") rightPressed = false;
-            else if (e.key == "Left" || e.key == "ArrowLeft") leftPressed = false;
-        }
+        let fibA = 0;
+        let fibB = 1;
 
         let bricks = [];
-        for (let c = 0; c < brickColumnCount; c++) {
-            bricks[c] = [];
-            for (let r = 0; r < brickRowCount; r++) {
-                bricks[c][r] = { x: 0, y: 0, status: 1 };
+
+        function initBricks() {
+            bricks = [];
+            for (let c = 0; c < brickColumnCount; c++) {
+                bricks[c] = [];
+                for (let r = 0; r < brickRowCount; r++) {
+                    bricks[c][r] = { x: 0, y: 0, status: 1 };
+                }
             }
         }
 
+        function resetGame() {
+            score = 0;
+            lives = 3;
+            fibA = 0;
+            fibB = 1;
+            initBricks();
+            resetBallOnPaddle();
+            gameState = 'READY';
+        }
+
+        function resetBallOnPaddle() {
+            paddleX = (canvas.width - paddleWidth) / 2;
+            x = paddleX + paddleWidth / 2;
+            y = paddleY - ballRadius;
+            // Launch slightly angled
+            dx = (Math.random() > 0.5 ? 1 : -1) * (2.0 + Math.random() * 0.8);
+            dy = -Math.sqrt(baseSpeed * baseSpeed - dx * dx);
+        }
+
+        function launchBall() {
+            if (gameState === 'READY') {
+                gameState = 'PLAYING';
+            } else if (gameState === 'GAMEOVER' || gameState === 'VICTORY') {
+                resetGame();
+                gameState = 'PLAYING';
+            }
+        }
+
+        // Event Listeners
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Right" || e.key === "ArrowRight" || e.key === "d" || e.key === "D") {
+                rightPressed = true;
+            } else if (e.key === "Left" || e.key === "ArrowLeft" || e.key === "a" || e.key === "A") {
+                leftPressed = true;
+            } else if (e.code === "Space") {
+                e.preventDefault();
+                launchBall();
+            }
+        });
+
+        document.addEventListener("keyup", (e) => {
+            if (e.key === "Right" || e.key === "ArrowRight" || e.key === "d" || e.key === "D") {
+                rightPressed = false;
+            } else if (e.key === "Left" || e.key === "ArrowLeft" || e.key === "a" || e.key === "A") {
+                leftPressed = false;
+            }
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = (e.clientX - rect.left) * (canvas.width / rect.width);
+            paddleX = Math.max(0, Math.min(canvas.width - paddleWidth, mouseX - paddleWidth / 2));
+            if (gameState === 'READY') {
+                x = paddleX + paddleWidth / 2;
+            }
+        });
+
+        canvas.addEventListener("click", () => {
+            launchBall();
+        });
+
+        canvas.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            const touchX = (touch.clientX - rect.left) * (canvas.width / rect.width);
+            paddleX = Math.max(0, Math.min(canvas.width - paddleWidth, touchX - paddleWidth / 2));
+            if (gameState === 'READY') {
+                x = paddleX + paddleWidth / 2;
+            }
+        }, { passive: false });
+
+        canvas.addEventListener("touchstart", (e) => {
+            launchBall();
+        });
+
+        // Drawing Functions
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
             ctx.fillStyle = "#38bdf8";
+            ctx.shadowColor = "#38bdf8";
+            ctx.shadowBlur = 8;
             ctx.fill();
             ctx.closePath();
+            ctx.shadowBlur = 0;
         }
 
         function drawPaddle() {
             ctx.beginPath();
-            ctx.rect(paddleX, canvas.height - paddleHeight - 6, paddleWidth, paddleHeight);
+            ctx.roundRect ? ctx.roundRect(paddleX, paddleY, paddleWidth, paddleHeight, 5) : ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
             ctx.fillStyle = "#60a5fa";
+            ctx.shadowColor = "#60a5fa";
+            ctx.shadowBlur = 6;
             ctx.fill();
             ctx.closePath();
+            ctx.shadowBlur = 0;
         }
 
         function drawBricks() {
-            const colors = ["#818cf8", "#38bdf8", "#34d399"];
+            const rowColors = [
+                ["#f43f5e", "#fb7185"], // Rose
+                ["#f59e0b", "#fbbf24"], // Amber
+                ["#10b981", "#34d399"]  // Emerald
+            ];
+
             for (let c = 0; c < brickColumnCount; c++) {
                 for (let r = 0; r < brickRowCount; r++) {
-                    if (bricks[c][r].status == 1) {
-                        let brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
-                        let brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
-                        bricks[c][r].x = brickX;
-                        bricks[c][r].y = brickY;
+                    if (bricks[c][r].status === 1) {
+                        const bx = c * (brickWidth + brickPadding) + brickOffsetLeft;
+                        const by = r * (brickHeight + brickPadding) + brickOffsetTop;
+                        bricks[c][r].x = bx;
+                        bricks[c][r].y = by;
+
+                        const colorPair = rowColors[r % rowColors.length];
+                        const gradient = ctx.createLinearGradient(bx, by, bx, by + brickHeight);
+                        gradient.addColorStop(0, colorPair[1]);
+                        gradient.addColorStop(1, colorPair[0]);
+
                         ctx.beginPath();
-                        ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                        ctx.fillStyle = colors[r % colors.length];
+                        ctx.roundRect ? ctx.roundRect(bx, by, brickWidth, brickHeight, 3) : ctx.rect(bx, by, brickWidth, brickHeight);
+                        ctx.fillStyle = gradient;
                         ctx.fill();
                         ctx.closePath();
                     }
@@ -195,112 +297,193 @@
             }
         }
 
-        function drawScore() {
-            ctx.font = "14px Inter, sans-serif";
+        function drawHUD() {
+            ctx.font = "600 13px Inter, sans-serif";
             ctx.fillStyle = "#e2e8f0";
-            ctx.fillText("Fibonacci Score: " + score, 14, 24);
+            ctx.textAlign = "left";
+            ctx.fillText("Fibonacci Score: " + score, 16, 26);
+
+            ctx.textAlign = "right";
+            let hearts = "";
+            for (let i = 0; i < lives; i++) hearts += "❤️ ";
+            ctx.fillText(hearts, canvas.width - 16, 26);
         }
 
-        function drawLives() {
-            ctx.font = "14px Inter, sans-serif";
-            ctx.fillStyle = "#facc15";
-            ctx.fillText("Lives: " + lives, canvas.width - 80, 24);
-        }
-
-        function collisionDetection() {
+        function checkWin() {
             for (let c = 0; c < brickColumnCount; c++) {
                 for (let r = 0; r < brickRowCount; r++) {
-                    let b = bricks[c][r];
-                    if (b.status == 1) {
-                        if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
-                            dy = -dy;
-                            b.status = 0;
+                    if (bricks[c][r].status === 1) return false;
+                }
+            }
+            return true;
+        }
 
-                            let newScore = fibPrev + fibCurrent;
-                            fibPrev = fibCurrent;
-                            fibCurrent = newScore;
-                            score = newScore;
+        function handleCollision(prevX, prevY) {
+            let hit = false;
+
+            for (let c = 0; c < brickColumnCount; c++) {
+                for (let r = 0; r < brickRowCount; r++) {
+                    const b = bricks[c][r];
+                    if (b.status === 1) {
+                        if (x + ballRadius > b.x && x - ballRadius < b.x + brickWidth &&
+                            y + ballRadius > b.y && y - ballRadius < b.y + brickHeight) {
+
+                            b.status = 0;
+                            hit = true;
+
+                            // Advance Fibonacci sequence
+                            const nextFib = fibA + fibB;
+                            fibA = fibB;
+                            fibB = nextFib;
+                            score = nextFib;
+
+                            // Determine bounce direction from entry edge
+                            const fromLeft = prevX + ballRadius <= b.x;
+                            const fromRight = prevX - ballRadius >= b.x + brickWidth;
+
+                            if (fromLeft || fromRight) {
+                                dx = -dx;
+                            } else {
+                                dy = -dy;
+                            }
 
                             if (checkWin()) {
-                                stopGameWithMessage("Victory! Fibonacci Master!");
-                                return;
+                                gameState = 'VICTORY';
                             }
+                            return;
                         }
                     }
                 }
             }
         }
 
-        function checkWin() {
-            for (let c = 0; c < brickColumnCount; c++) {
-                for (let r = 0; r < brickRowCount; r++) {
-                    if (bricks[c][r].status == 1) return false;
+        function update() {
+            if (gameState === 'READY') {
+                x = paddleX + paddleWidth / 2;
+                y = paddleY - ballRadius;
+            } else if (gameState === 'PLAYING') {
+                const prevX = x;
+                const prevY = y;
+
+                x += dx;
+                y += dy;
+
+                // Wall collisions (Left & Right)
+                if (x - ballRadius <= 0) {
+                    x = ballRadius;
+                    dx = Math.abs(dx);
+                } else if (x + ballRadius >= canvas.width) {
+                    x = canvas.width - ballRadius;
+                    dx = -Math.abs(dx);
                 }
-            }
-            return true;
-        }
 
-        function stopGameWithMessage(message) {
-            cancelAnimationFrame(gameLoop);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.font = "22px Inter, sans-serif";
-            ctx.fillStyle = "#38bdf8";
-            ctx.textAlign = "center";
-            ctx.fillText(message, canvas.width / 2, canvas.height / 2 - 10);
-            ctx.font = "14px Inter, sans-serif";
-            ctx.fillStyle = "#94a3b8";
-            ctx.fillText("Final Score: " + score, canvas.width / 2, canvas.height / 2 + 25);
-        }
+                // Ceiling collision
+                if (y - ballRadius <= 0) {
+                    y = ballRadius;
+                    dy = Math.abs(dy);
+                }
 
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawBricks();
-            drawBall();
-            drawPaddle();
-            drawScore();
-            drawLives();
-            collisionDetection();
+                // Brick collisions
+                handleCollision(prevX, prevY);
 
-            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-                dx = -dx;
-            }
-            if (y + dy < ballRadius) {
-                dy = -dy;
-            } else if (y + dy > canvas.height - ballRadius - 6) {
-                if (x > paddleX && x < paddleX + paddleWidth) {
-                    dy = -dy;
-                    dx += (Math.random() * 0.4) - 0.2;
-                    if (rightPressed) dx += 0.5;
-                    else if (leftPressed) dx -= 0.5;
-
-                    if (score >= 987) {
-                        stopGameWithMessage("Max Fibonacci Score Reached!");
-                        return;
+                // Paddle collision
+                if (y + ballRadius >= paddleY && y - ballRadius <= paddleY + paddleHeight) {
+                    if (x >= paddleX && x <= paddleX + paddleWidth && dy > 0) {
+                        y = paddleY - ballRadius;
+                        // Steer angle depending on where the ball strikes the paddle
+                        const hitOffset = (x - (paddleX + paddleWidth / 2)) / (paddleWidth / 2);
+                        dx = hitOffset * 3.4;
+                        const speed = 4.2;
+                        dy = -Math.sqrt(Math.max(6, speed * speed - dx * dx));
                     }
-                } else {
+                }
+
+                // Bottom boundary: Ball lost
+                if (y - ballRadius > canvas.height) {
                     lives--;
-                    if (!lives) {
-                        stopGameWithMessage("GAME OVER");
-                        return;
+                    if (lives <= 0) {
+                        gameState = 'GAMEOVER';
                     } else {
-                        x = canvas.width / 2;
-                        y = canvas.height - 35;
-                        dx = 2.5;
-                        dy = -2.5;
-                        paddleX = (canvas.width - paddleWidth) / 2;
+                        gameState = 'READY';
+                        resetBallOnPaddle();
                     }
                 }
             }
 
-            if (rightPressed && paddleX < canvas.width - paddleWidth) paddleX += 6;
-            else if (leftPressed && paddleX > 0) paddleX -= 6;
-
-            x += dx;
-            y += dy;
-            gameLoop = requestAnimationFrame(draw);
+            // Keyboard paddle control
+            if (rightPressed && paddleX < canvas.width - paddleWidth) {
+                paddleX += 6.5;
+            } else if (leftPressed && paddleX > 0) {
+                paddleX -= 6.5;
+            }
         }
 
-        draw();
+        function drawOverlay() {
+            if (gameState === 'READY') {
+                ctx.fillStyle = "rgba(11, 19, 41, 0.65)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.textAlign = "center";
+                ctx.font = "700 20px Inter, sans-serif";
+                ctx.fillStyle = "#38bdf8";
+                ctx.fillText("Ready to Play?", canvas.width / 2, canvas.height / 2 - 12);
+
+                ctx.font = "14px Inter, sans-serif";
+                ctx.fillStyle = "#cbd5e1";
+                ctx.fillText("Press Spacebar or Click to Launch Ball", canvas.width / 2, canvas.height / 2 + 18);
+            } else if (gameState === 'GAMEOVER') {
+                ctx.fillStyle = "rgba(11, 19, 41, 0.88)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.textAlign = "center";
+                ctx.font = "700 28px Inter, sans-serif";
+                ctx.fillStyle = "#ef4444";
+                ctx.fillText("GAME OVER", canvas.width / 2, canvas.height / 2 - 25);
+
+                ctx.font = "15px Inter, sans-serif";
+                ctx.fillStyle = "#e2e8f0";
+                ctx.fillText("Final Fibonacci Score: " + score, canvas.width / 2, canvas.height / 2 + 10);
+
+                ctx.font = "13px Inter, sans-serif";
+                ctx.fillStyle = "#94a3b8";
+                ctx.fillText("Press Spacebar or Click to Try Again", canvas.width / 2, canvas.height / 2 + 38);
+            } else if (gameState === 'VICTORY') {
+                ctx.fillStyle = "rgba(11, 19, 41, 0.88)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.textAlign = "center";
+                ctx.font = "700 26px Inter, sans-serif";
+                ctx.fillStyle = "#10b981";
+                ctx.fillText("🎉 VICTORY! 🎉", canvas.width / 2, canvas.height / 2 - 25);
+
+                ctx.font = "16px Inter, sans-serif";
+                ctx.fillStyle = "#e2e8f0";
+                ctx.fillText("Fibonacci Master! Score: " + score, canvas.width / 2, canvas.height / 2 + 10);
+
+                ctx.font = "13px Inter, sans-serif";
+                ctx.fillStyle = "#94a3b8";
+                ctx.fillText("Press Spacebar or Click to Play Again", canvas.width / 2, canvas.height / 2 + 38);
+            }
+        }
+
+        function gameLoop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            drawBricks();
+            drawPaddle();
+            drawBall();
+            drawHUD();
+
+            update();
+            drawOverlay();
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Initialize and start loop
+        initBricks();
+        resetBallOnPaddle();
+        requestAnimationFrame(gameLoop);
     </script>
 </body>
 </html>
