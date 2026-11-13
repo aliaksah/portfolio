@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 90" width="300" height="90">
+  <rect x="4" y="12" width="66" height="66" rx="12" fill="#0f4c5c"/>
+  <path d="M23 26 C38 34, 38 56, 23 64 M51 26 C36 34, 36 56, 51 64" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="27" y1="35" x2="47" y2="35" stroke="#99f6e4" stroke-width="2.2"/>
+  <line x1="27" y1="45" x2="47" y2="45" stroke="#99f6e4" stroke-width="2.2"/>
+  <line x1="27" y1="55" x2="47" y2="55" stroke="#99f6e4" stroke-width="2.2"/>
+  <text x="84" y="44" font-family="Inter, -apple-system, sans-serif" font-size="25" font-weight="700" letter-spacing="1" fill="#0f4c5c">NORBIS</text>
+  <text x="84" y="64" font-family="Inter, -apple-system, sans-serif" font-size="12" font-weight="500" fill="#475569">Bioinformatics &amp; Biostatistics</text>
+</svg>
+

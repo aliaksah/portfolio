@@ -165,18 +165,19 @@ p:last-child {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-muted);
-  padding: 0.5rem 0.85rem;
+  padding: 0.45rem 0.65rem;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   text-decoration: none !important;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -1118,6 +1119,105 @@ p:last-child {
 }
 
 /* --------------------------------------------------------------------------
+   Institutions, Partners & Collaborative Projects Grid
+   -------------------------------------------------------------------------- */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.35rem;
+}
+
+.partner-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.partner-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-border);
+}
+
+.partner-logo-box {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.partner-logo-box img {
+  max-height: 52px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.partner-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.partner-logo-label {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+.partner-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.55rem;
+}
+
+.partner-period {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.partner-title {
+  font-size: 1.1rem;
+  font-family: var(--font-serif);
+  color: var(--primary);
+  margin-bottom: 0.45rem;
+}
+
+.partner-desc {
+  font-size: 0.885rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.partner-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 .site-footer {
@@ -1189,7 +1289,7 @@ p:last-child {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .nav-toggle {
     display: block;
   }

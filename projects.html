@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners &amp; Projects | Aliaksandr Hubin</title>
+    <meta name="description" content="Academic institutions, national research centres, industry collaborations, and international consortia involving Aliaksandr Hubin, including NMBU, UiO, NR, MedUni Wien, Integreat, BigInsight, TRUST, REVITALISE, Exabel, and the BayesAI / BDL Consortium.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <span class="brand-name">Aliaksandr Hubin</span>
+                <span class="brand-title">NMBU &amp; University of Oslo</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">About</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="talks.html" class="nav-link">Talks</a></li>
+                    <li><a href="teaching.html" class="nav-link">Teaching &amp; Mentoring</a></li>
+                    <li><a href="software.html" class="nav-link">Software</a></li>
+                    <li><a href="service.html" class="nav-link">Service</a></li>
+                    <li><a href="projects.html" class="nav-link active">Partners &amp; Projects</a></li>
+                    <li><a href="CV_Aliaksandr_Hubin.pdf" class="nav-link-cv" target="_blank" rel="noopener">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        CV (PDF)
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+
+            <div class="section-header">
+                <div>
+                    <h1 style="font-size: 2.1rem; margin-bottom: 0.35rem;">Institutions, Projects &amp; Consortia</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Academic institutions, research centres, industry innovation partners, and international scientific consortia I collaborate with.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="partnerSearch" class="search-input" placeholder="Filter institutions, projects, centres, or consortia...">
+                </div>
+                <div class="filter-pills" id="partnerFilters">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="institution">Institutions</button>
+                    <button class="filter-pill" data-filter="centre">Research Centres</button>
+                    <button class="filter-pill" data-filter="project">Applied &amp; Industry</button>
+                    <button class="filter-pill" data-filter="consortium">Consortia &amp; Networks</button>
+                </div>
+            </div>
+
+            <!-- Section 1: Institutions -->
+            <section class="section-block" id="institutions">
+                <h2 class="section-title"><span>🏛️</span> Academic &amp; Research Institutions</h2>
+
+                <div class="partner-grid">
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/nmbu.svg" alt="Norwegian University of Life Sciences (NMBU) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-journal">Current Affiliation</span>
+                            <span class="partner-period">2022–Present</span>
+                        </div>
+                        <h3 class="partner-title">Norwegian University of Life Sciences (NMBU)</h3>
+                        <p class="partner-desc">
+                            Associate Professor in Statistics in the Bioinformatics and Applied Statistics group (Ås, Norway). Teaching STAT340, STAT210, and STIN300, statistical consulting, and supervising PhD and Master's students.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.nmbu.no/en" class="btn-pill primary" target="_blank" rel="noopener">NMBU Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/uio.png" alt="University of Oslo (UiO) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-journal">Current Affiliation</span>
+                            <span class="partner-period">2014–Present</span>
+                        </div>
+                        <h3 class="partner-title">University of Oslo (UiO)</h3>
+                        <p class="partner-desc">
+                            Associate Professor in Statistics (2022–Present), following a Postdoctoral Fellowship (2021–2022) and PhD in Statistics (2014–2018) at the Department of Mathematics, Faculty of Mathematics and Natural Sciences.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.uio.no/english/" class="btn-pill primary" target="_blank" rel="noopener">UiO Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/nr.svg" alt="Norwegian Computing Center (Norsk Regnesentral, NR) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">Research Institute</span>
+                            <span class="partner-period">2018–2020 &amp; Ongoing</span>
+                        </div>
+                        <h3 class="partner-title">Norwegian Computing Center (NR)</h3>
+                        <p class="partner-desc">
+                            Served as Researcher / Senior Researcher (2018–2020) in the SAMBA department (Statistical Analysis, Machine Learning, and Image Analysis), with ongoing collaborations across BigInsight, Integreat, TRUST, and NLP.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://nr.no/en/" class="btn-pill primary" target="_blank" rel="noopener">NR Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/meduni-wien.svg" alt="Medical University of Vienna (MedUni Wien) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">Research Collaborator</span>
+                            <span class="partner-period">2017–Present</span>
+                        </div>
+                        <h3 class="partner-title">Medical University of Vienna (MU Wien)</h3>
+                        <p class="partner-desc">
+                            Visiting researcher (2017 NORBIS international travel grant) and long-standing collaborator at the Center for Medical Data Science on BGNLM, FBMS, Bayesian logic regression, fractional polynomials, and STRATOS.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.meduniwien.ac.at/web/en/" class="btn-pill primary" target="_blank" rel="noopener">MedUni Wien &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/hiof.svg" alt="Østfold University College (HiØ) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">Former Affiliation &amp; Co-Supervision</span>
+                            <span class="partner-period">2022–2025 &amp; Ongoing</span>
+                        </div>
+                        <h3 class="partner-title">Østfold University College (HiØ)</h3>
+                        <p class="partner-desc">
+                            Associate Professor in Statistics (2022–2025), providing statistical consulting and ongoing PhD co-supervision in bioinspired AI, reservoir computing, and software engineering analytics.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.hiof.no/english/" class="btn-pill primary" target="_blank" rel="noopener">HiØ Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/ldh.svg" alt="Lovisenberg Diaconal University College (LDH) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">Statistical Consulting</span>
+                            <span class="partner-period">2022–Present</span>
+                        </div>
+                        <h3 class="partner-title">Lovisenberg Diaconal University College</h3>
+                        <p class="partner-desc">
+                            Ongoing statistical consulting and methodological collaboration (2022–Present) on clinical, nursing, and health-sciences research studies.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.ldh.no/english" class="btn-pill primary" target="_blank" rel="noopener">LDH Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/ucph.svg" alt="University of Copenhagen (UCPH) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">PhD Co-Supervision</span>
+                            <span class="partner-period">Ongoing</span>
+                        </div>
+                        <h3 class="partner-title">University of Copenhagen (UCPH)</h3>
+                        <p class="partner-desc">
+                            Joint doctoral co-supervision and research collaboration with the Department of Veterinary and Animal Sciences on Bayesian modelling of disease occurrence.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.ku.dk/en" class="btn-pill primary" target="_blank" rel="noopener">UCPH Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/himolde.svg" alt="Molde University College (HiMolde) logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">Alma Mater (MSc)</span>
+                            <span class="partner-period">2012–2014</span>
+                        </div>
+                        <h3 class="partner-title">Molde University College (HiMolde)</h3>
+                        <p class="partner-desc">
+                            Master of Science in Operations Research (2012–2014) at the Specialized University in Logistics. Recipient of the 2014 NIMA Award for Best MSc Graduate.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.himolde.no/english/" class="btn-pill primary" target="_blank" rel="noopener">HiMolde Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/bsu.svg" alt="Belarusian State University (BSU) emblem">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">Alma Mater &amp; Collaborator</span>
+                            <span class="partner-period">2008–2013 &amp; Collaborations</span>
+                        </div>
+                        <h3 class="partner-title">Belarusian State University (BSU)</h3>
+                        <p class="partner-desc">
+                            Specialist Diploma in Applied Mathematics and Computer Science (2008–2013; First Award for Student Research, 2013) and subsequent CDAM conference proceedings collaborations.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://bsu.by/en/" class="btn-pill primary" target="_blank" rel="noopener">BSU Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/univie.svg" alt="University of Vienna logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">MSc Supervision</span>
+                            <span class="partner-period">2020–2021</span>
+                        </div>
+                        <h3 class="partner-title">University of Vienna</h3>
+                        <p class="partner-desc">
+                            Master's thesis supervision collaboration with the Department of Mathematics, University of Vienna, Austria.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.univie.ac.at/en/" class="btn-pill primary" target="_blank" rel="noopener">University of Vienna &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="institution">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/su.svg" alt="Stockholm University logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">MSc Supervision &amp; Co-Author</span>
+                            <span class="partner-period">2020–Present</span>
+                        </div>
+                        <h3 class="partner-title">Stockholm University</h3>
+                        <p class="partner-desc">
+                            Master's thesis supervision at the Department of Statistics (2020–2021) and ongoing software and methodological collaboration on subsampling MCMC and FBMS.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.su.se/english/" class="btn-pill primary" target="_blank" rel="noopener">Stockholm University &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Section 2: Research Centres, Collaborative Projects & Consortia -->
+            <section class="section-block" id="collaborations">
+                <h2 class="section-title"><span>🤝</span> Projects, Research Centres &amp; Consortia</h2>
+
+                <div class="partner-grid">
+
+                    <article class="partner-card" data-category="centre">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/integreat.svg" alt="Integreat Centre for Knowledge-Driven Machine Learning logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-journal">Centre of Excellence (SFF)</span>
+                            <span class="partner-period">RCN &bull; UiO / NR / UiT</span>
+                        </div>
+                        <h3 class="partner-title">Integreat &bull; Knowledge-Driven Machine Learning</h3>
+                        <p class="partner-desc">
+                            Norwegian Centre for Knowledge-Driven Machine Learning, uniting statistical reasoning and domain knowledge with machine learning for sustainable, transparent, and uncertainty-aware AI.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.integreat.no/" class="btn-pill primary" target="_blank" rel="noopener">Integreat Portal &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="centre">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/trust.png" alt="TRUST The Norwegian Centre for Trustworthy AI logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-journal">National AI Centre</span>
+                            <span class="partner-period">2025–2030 &bull; RCN</span>
+                        </div>
+                        <h3 class="partner-title">TRUST &bull; Norwegian Centre for Trustworthy AI</h3>
+                        <p class="partner-desc">
+                            National Research Council of Norway AI centre led by UiO, SINTEF, and Norsk Regnesentral, advancing trustworthy, interpretable, calibrated, and safe artificial intelligence.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.trust-aicentre.no/" class="btn-pill primary" target="_blank" rel="noopener">TRUST Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="centre">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/biginsight.png" alt="BigInsight SFI logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">Centre for Research-Based Innovation (SFI)</span>
+                            <span class="partner-period">RCN</span>
+                        </div>
+                        <h3 class="partner-title">BigInsight</h3>
+                        <p class="partner-desc">
+                            Research Council of Norway SFI developing scalable statistical and machine learning tools for complex, high-dimensional data, risk modelling, and industrial innovation (including NR–DNB collaborations).
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.biginsight.no/" class="btn-pill primary" target="_blank" rel="noopener">BigInsight Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="project">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/fhf.svg" alt="FHF Norwegian Seafood Research Fund logo (REVITALISE project)">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">FHF Project #901834</span>
+                            <span class="partner-period">2023–2026</span>
+                        </div>
+                        <h3 class="partner-title">REVITALISE</h3>
+                        <p class="partner-desc">
+                            FHF-funded research project (with IMR, NMBU, Nofima, Skretting, and Mowi) studying vitamin and mineral requirements for Atlantic salmon health using Bayesian fractional polynomials and optimal dosage estimation.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.fhf.no/prosjekter/prosjektbasen/901834/" class="btn-pill primary" target="_blank" rel="noopener">FHF Project Page &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="project">
+                        <div class="partner-logo-box">
+                            <div class="partner-logo-row">
+                                <img src="assets/logos/exabel-icon.png" alt="Exabel logo" style="max-height: 44px;">
+                                <span class="partner-logo-label">Exabel</span>
+                            </div>
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">Industrial Innovation (BIA / FINPRO)</span>
+                            <span class="partner-period">2018–2020 &bull; RCN</span>
+                        </div>
+                        <h3 class="partner-title">Exabel &bull; FinAI &amp; Alternative Data</h3>
+                        <p class="partner-desc">
+                            Research Council of Norway BIA / FINPRO collaboration between the Norwegian Computing Center (NR) and Exabel AS on scalable machine learning and AI for financial time-series modelling.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.exabel.com/" class="btn-pill primary" target="_blank" rel="noopener">Exabel Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="consortium" id="bdl-consortium">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/bdl-consortium.svg" alt="BDL Consortium / BayesAI logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-journal">International Consortium</span>
+                            <span class="partner-period">Active Member</span>
+                        </div>
+                        <h3 class="partner-title">BayesAI / BDL Consortium</h3>
+                        <p class="partner-desc">
+                            International consortium advancing Bayesian Deep Learning (BDL), uncertainty quantification, and decision-making under uncertainty. Contributing author to the <em>Handbook of Bayesian Deep Learning</em> and the ICML 2024 Position Paper.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://bdlbook.org/" class="btn-pill primary" target="_blank" rel="noopener">Handbook (bdlbook.org) &rarr;</a>
+                            <a href="https://bdlbook.org/frontmatter/authors" class="btn-pill" target="_blank" rel="noopener">Authors</a>
+                            <a href="https://bayesai-isba.github.io/" class="btn-pill" target="_blank" rel="noopener">ISBA BayesAI</a>
+                            <a href="https://proceedings.mlr.press/v235/papamarkou24b.html" class="btn-pill" target="_blank" rel="noopener">ICML Position Paper</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="project">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/dnb.svg" alt="DNB logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">Industrial Innovation</span>
+                            <span class="partner-period">2018–2020 &bull; RCN</span>
+                        </div>
+                        <h3 class="partner-title">DNB &bull; BigInsight Industry Project</h3>
+                        <p class="partner-desc">
+                            Research Council of Norway collaboration between the Norwegian Computing Center (NR) and DNB on statistical machine learning and financial risk modelling.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.dnb.no/" class="btn-pill primary" target="_blank" rel="noopener">DNB Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="project">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/equinor.svg" alt="Equinor logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">Research Funding</span>
+                            <span class="partner-period">2021</span>
+                        </div>
+                        <h3 class="partner-title">Equinor Akademia Collaboration</h3>
+                        <p class="partner-desc">
+                            Secured full Equinor funding for a 3-year postdoctoral research position through the Equinor Akademia scheme.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://www.equinor.com/" class="btn-pill primary" target="_blank" rel="noopener">Equinor Website &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="consortium">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/stratos.svg" alt="STRATOS Topic Group 2 logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-conf">International Initiative</span>
+                            <span class="partner-period">Topic Group 2</span>
+                        </div>
+                        <h3 class="partner-title">STRATOS Initiative &bull; TG2</h3>
+                        <p class="partner-desc">
+                            STRengthening Analytical Thinking for Observational Studies (Topic Group 2): collaborative research on variable selection, functional forms, and Bayesian model averaging in multivariable analysis.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://stratostg2.github.io/" class="btn-pill primary" target="_blank" rel="noopener">STRATOS TG2 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="partner-card" data-category="consortium">
+                        <div class="partner-logo-box">
+                            <img src="assets/logos/norbis.svg" alt="NORBIS Research School logo">
+                        </div>
+                        <div class="partner-meta">
+                            <span class="pub-type-badge badge-preprint">National Research School</span>
+                            <span class="partner-period">2015–Present</span>
+                        </div>
+                        <h3 class="partner-title">NORBIS Research School</h3>
+                        <p class="partner-desc">
+                            Norwegian National Research School in Bioinformatics, Biostatistics, and Systems Biology; awarded the 2017 NORBIS international travel grant for research at MedUni Wien.
+                        </p>
+                        <div class="partner-links">
+                            <a href="https://norbis.w.uib.no/" class="btn-pill primary" target="_blank" rel="noopener">NORBIS Website &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p>&copy; 2026 Aliaksandr Hubin &bull; Academic Profile</p>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="talks.html">Talks</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="projects.html">Partners &amp; Projects</a></li>
+                <li><a href="game.html" class="easter-egg-link">Break Room 🎮</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+
+        // Filter and Search Logic
+        const searchInput = document.getElementById('partnerSearch');
+        const filterButtons = document.querySelectorAll('#partnerFilters .filter-pill');
+        const cards = document.querySelectorAll('.partner-card');
+        const sections = document.querySelectorAll('.section-block');
+        let currentFilter = 'all';
+
+        function applyFilters() {
+            const query = searchInput.value.trim().toLowerCase();
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                const text = card.innerText.toLowerCase();
+                const matchesCat = (currentFilter === 'all') || (cat === currentFilter);
+                const matchesQuery = !query || text.includes(query);
+                card.style.display = (matchesCat && matchesQuery) ? '' : 'none';
+            });
+
+            sections.forEach(sec => {
+                const visible = sec.querySelectorAll('.partner-card:not([style*="display: none"])').length;
+                sec.style.display = visible > 0 ? '' : 'none';
+            });
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+    </script>
+</body>
+</html>
+
