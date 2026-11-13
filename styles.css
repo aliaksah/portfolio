@@ -1123,15 +1123,33 @@ p:last-child {
    -------------------------------------------------------------------------- */
 .partner-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 1.35rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.partner-grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 960px) {
+  .partner-grid,
+  .partner-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .partner-grid,
+  .partner-grid-2col {
+    grid-template-columns: 1fr;
+  }
 }
 
 .partner-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1.4rem;
+  padding: 1.25rem;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -1139,29 +1157,45 @@ p:last-child {
 }
 
 .partner-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: var(--accent-border);
 }
 
 .partner-logo-box {
-  height: 76px;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1rem;
+  padding: 0.9rem 1.15rem;
   margin-bottom: 1rem;
   background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 
 .partner-logo-box img {
-  max-height: 52px;
-  max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
+  display: block;
+}
+
+.partner-logo-box img.logo-wide {
+  max-width: 195px;
+  max-height: 44px;
+}
+
+.partner-logo-box img.logo-medium {
+  max-width: 155px;
+  max-height: 50px;
+}
+
+.partner-logo-box img.logo-emblem {
+  max-width: 54px;
+  max-height: 54px;
+  flex-shrink: 0;
 }
 
 .partner-logo-row {
@@ -1169,13 +1203,15 @@ p:last-child {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  max-width: 100%;
 }
 
 .partner-logo-label {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--primary);
+  line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
